@@ -17,12 +17,6 @@ client.on('message', message => {
     if (message.content === '!ping') {
         message.reply('pong');
     }
-    if (message.content === '!shampoo') {
-        message.reply('我爱你！ Wo ai ni!');
-    }
-    if (['shampoo', 'ukyo', 'kodachi', 'kuno'].indexOf(message.content) === -1) {
-        message.reply('Hmph.'); 
-    }
 
 });
 
