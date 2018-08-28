@@ -14,11 +14,15 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
-    if (message.content === 'ping') {
-
-       message.reply('pong');
-
-       }
+    if (message.content === '!ping') {
+        message.reply('pong');
+    }
+    if (message.content === '!shampoo') {
+        message.reply('我爱你！ Wo ai ni!');
+    }
+    if (['shampoo', 'ukyo', 'kodachi', 'kuno'].indexOf(message.content) === -1) {
+        message.reply('Hmph.'); 
+    }
 
 });
 
@@ -26,4 +30,4 @@ client.on('message', message => {
 
 // THIS  MUST  BE  THIS  WAY
 
-client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot
+client.login(process.env.NDgzODM5ODEwMDU4ODQ2MjA4.Dmbq5A.r6qg_aKYbS3S8YBUIXAT6DASdaw);//where BOT_TOKEN is the token of our bot
