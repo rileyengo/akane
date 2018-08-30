@@ -91,7 +91,7 @@ client.on('message', message => {
 	if (responseObject[message.content]) {
 		message.channel.send(responseObject[message.content]);
 	} 
-	// The modules we are using are cheerio, snekfetch, and querystring.
+	/*
 	if (command === 'google') {
 	const cheerio = require('cheerio'),
 		  snekfetch = require('snekfetch'),
@@ -107,7 +107,7 @@ client.on('message', message => {
 		}).catch((err) => {
 			searchMessage.edit('No results found!');
 		});
-	}
+	} */
 }/* SEE BETA BRANCH FOR THIS ONE
 	if (command === 'trivia') {
 		const questions = ["What is the name of BTS' third Love Yourself album?", "http://yahoo.com", "http://msn.com", "http://apple.com"];
