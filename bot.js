@@ -5,7 +5,7 @@ const client = new Discord.Client();
  
 
 client.on('ready', () => {
-	client.user.setPresence({ game: { name: 'Ranma 1/2', type: 'WATCHING' } });
+	client.user.setPresence({ game: { name: 'Ranma 1/2', type: 0 } });
 	// client.setPlayingGame('Ranma, Ranma, don\'t make me wild like you!');
 	// client.user.setActivity({game: {name: "Ranma, Ranma, don't make me wild like you!", type: 0}});
 });
