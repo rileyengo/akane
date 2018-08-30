@@ -5,10 +5,10 @@ const client = new Discord.Client();
  
 
 client.on('ready', () => {
-    console.log('I am ready!');
+    console.log('I am ready!'); /*
 	client.user.setActivity('Ranma 1/2', { type: 'WATCHING' })
   .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
-  .catch(console.error);
+  .catch(console.error); */
 });
 
  
