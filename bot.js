@@ -16,6 +16,11 @@ client.on('message', message => {
 	const prefix = '!';
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
+	const responseObject = {
+		"ayy": "LMAOO",
+		"lmao": "AYY",
+		"no u": "no u"
+	};
     if (command === 'ping') {
         message.reply('pong');
     }
@@ -65,15 +70,54 @@ client.on('message', message => {
 		let role = message.guild.roles.find("name", "Team Mystic");
 		let member = message.mentions.members.first();
 		member.removeRole(role).catch(console.error);
-	}
+	} /*
 	if (command === "ban") {
 		let member = message.mentions.members.first();
 		let reason = args.slice(1).join(" ");
 		member.ban(reason);
-	}
+	} */
 	if (command === 'avatar') {
     	message.reply(message.author.avatarURL);
-  	} /*
+  	} 
+	if (responseObject[message.content]) {
+		message.channel.send(responseObject[message.content]);
+	} 
+	// The modules we are using are cheerio, snekfetch, and querystring.
+	if (command === 'google') {
+	const cheerio = require('cheerio'),
+		  snekfetch = require('snekfetch'),
+		  querystring = require('querystring');
+	async function googleCommand(msg, args) {
+		let searchMessage = await <Message>.reply('Searching... Sec.');
+		let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(msg.content)}`;
+		return snekfetch.get(searchUrl).then((result) => {
+			let $ = cheerio.load(result.text);
+			let googleData = $('.r').first().find('a').first().attr('href');
+			googleData = querystring.parse(googleData.replace('/url?', ''));
+			searchMessage.edit(`Result found!\n${googleData.q}`);
+		}).catch((err) => {
+			searchMessage.edit('No results found!');
+		});
+	}
+}/* SEE BETA BRANCH FOR THIS ONE
+	if (command === 'trivia') {
+		const questions = ["What is the name of BTS' third Love Yourself album?", "http://yahoo.com", "http://msn.com", "http://apple.com"];
+		const question = questions[Math.floor(Math.random() * favorites.length)];
+		message.channel.send(questions)
+			.then(() => {
+			message.channel.awaitMessages(response => response.content === 'test', {
+				max: 1,
+				time: 30000,
+				errors: ['time'],
+			})
+				.then((collected) => {
+				message.channel.send(`The collected message was: ${collected.first().content}`);
+			})
+				.catch(() => {
+				message.channel.send('There was no collected message that passed the filter within the time limit!');
+			});
+		});
+	} 
   if (message.content.startsWith('!avatar ')) {
     // Send the user's avatar URL
     message.reply(message.author.avatarURL);
