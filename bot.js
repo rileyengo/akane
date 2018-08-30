@@ -17,7 +17,7 @@ client.on('message', message => {
 	const responseObject = {
 		"ayy": "LMAOO",
 		"lmao": "AYY",
-		"no u": "no u"
+		"no u": "NO U"
 	};
     if (command === 'ping') {
         message.reply('pong');
