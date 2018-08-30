@@ -60,7 +60,7 @@ client.on('message', message => {
 		let text = args.slice(1).join(" ");
 		message.delete();
 		message.channel.send(text);
-	}
+	} /*
 	if (command === "addrole"){
 		let role = message.guild.roles.find("name", "Team Mystic");
 		let member = message.mentions.members.first();
@@ -70,7 +70,7 @@ client.on('message', message => {
 		let role = message.guild.roles.find("name", "Team Mystic");
 		let member = message.mentions.members.first();
 		member.removeRole(role).catch(console.error);
-	} /*
+	} 
 	if (command === "ban") {
 		let member = message.mentions.members.first();
 		let reason = args.slice(1).join(" ");
