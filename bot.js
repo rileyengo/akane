@@ -5,9 +5,7 @@ const client = new Discord.Client();
  
 
 client.on('ready', () => {
-	client.user.setPresence({ game: { name: 'Ranma 1/2', type: 0 } });
-	// client.setPlayingGame('Ranma, Ranma, don\'t make me wild like you!');
-	// client.user.setActivity({game: {name: "Ranma, Ranma, don't make me wild like you!", type: 0}});
+	client.user.setPresence({ game: { name: 'Ranma 1/2', type: 1 } });
 });
 
  
@@ -27,9 +25,20 @@ client.on('message', message => {
     if (command === 'shampoo') {
         message.reply('我爱你! Wo ai ni!');
     }
-    if (command === 'loveyourself') {
-		const loveYourself = ['You can\'t stop me loving myself!', 'It\'s all fAKE loVE', 'It\'s in our DNA.']
-        message.channel.send(loveYourself);
+    if (command === 'quote') {
+		const quotes = ["\"What doesn't kill me makes me stronger.\" \n * ~ Johann Wolfgang von Goethe *", 
+						"\"You're amazing just the way you are.\" \n * ~ Bruno Mars *", 
+						"\"Still, like air, I rise.\" \n * ~ Maya Angelou *", 
+						"\"To infinity and beyond!\" \n * ~ Buzz Lightyear *", 
+						"\"Playing safe is boring.\" \n * ~ Sandy Lam *", 
+						"\"If you can dream it, you can do it.\" \n * ~ Walt Disney *", 
+						"\"You can't stop me loving myself.\" \n * ~ BTS *", 
+						"\"All you need is love.\" \n * ~ The Beatles *",
+						"\"a rivr of gold \n is flowing thru \n all our hearts\" \n * ~ bill bissett *",
+						"\"Where hope grows, miracles blossom.\" \n * ~ Elna Rae *",
+					   ];
+		const quote = quotes[Math.floor(Math.random() * favorites.length)];
+		message.channel.send(quote)
     }
     if (message.content === 'ayy') {
         message.channel.send('LMAOO'); 
