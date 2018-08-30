@@ -24,6 +24,23 @@ client.on('message', message => {
     if (message.content === 'ayy') {
         message.channel.send('LMAOO'); 
     }
+	if (message.content === '!fruits') {
+		message.react('🍎');
+		message.react('🍊');
+		message.react('🍇');
+	}
+	if (message.content === '!hug') {
+    	message.reply('love you, bae! <3');
+		message.react('✨')
+		message.react('💖')
+		message.react('💕')
+	}
+	if (message.content === `!server`) {
+    	message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+	}
+	if (message.content === `!user-info`) {
+    	message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+	}
  // If the message content starts with "!kick"
  if (message.content.startsWith('!kick')) {
     // Assuming we mention someone in the message, this will return the user
@@ -117,14 +134,6 @@ client.on('message', message => {
              }
       }
   } */
-	// !hug
-	if (message.content === '!hug') {
-    // Send the user's avatar URL
-    message.reply('Love you, bae! <3');
-	message.react("✨")
-	message.react("💖")
-	message.react("💕")
-  }
 	// !info
 	if (message.content === '!info') {
 		message.channel.send({embed: {
