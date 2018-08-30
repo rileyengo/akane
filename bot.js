@@ -17,7 +17,7 @@ client.on('message', message => {
         message.reply('pong');
     }
     if (message.content === '!shampoo') {
-        message.reply('我爱你！ Wo ai ni!');
+        message.reply('我爱你! Wo ai ni!');
     }
     if (message.content === '!loveyourself') {
         message.reply('You can\'t stop me loving myself!');
