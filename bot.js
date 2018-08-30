@@ -5,7 +5,7 @@ const client = new Discord.Client();
  
 
 client.on('ready', () => {
-	client.user.setPresence({ game: { name: 'Ranma 1/2', type: 1 } });
+	client.user.setPresence({ game: { name: 'Ranma 1/2', type: 3 } });
 });
 
  
@@ -37,7 +37,7 @@ client.on('message', message => {
 						"\"a rivr of gold \n is flowing thru \n all our hearts\" \n * ~ bill bissett *",
 						"\"Where hope grows, miracles blossom.\" \n * ~ Elna Rae *",
 					   ];
-		const quote = quotes[Math.floor(Math.random() * favorites.length)];
+		const quote = quotes[Math.floor(Math.random() * quotes.length)];
 		message.channel.send(quote)
     }
     if (message.content === 'ayy') {
