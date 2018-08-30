@@ -54,11 +54,11 @@ client.on('message', message => {
         });
       } else {
         // The mentioned user isn't in this guild
-        message.reply('That user isn\'t in this guild!');
+        message.reply('that user isn\'t in this guild!');
       }
     // Otherwise, if no user was mentioned
     } else {
-      message.reply('You didn\'t mention the user to kick!');
+      message.reply('you didn\'t mention the user to kick!');
     }
   }
    // if the message content starts with "!ban"
@@ -98,7 +98,7 @@ client.on('message', message => {
       }
     } else {
     // Otherwise, if no user was mentioned
-      message.reply('You didn\'t mention the user to ban!');
+      message.reply('you didn\'t mention the user to ban!');
     }
   }
    // If the message is "what is my avatar"
