@@ -106,6 +106,18 @@ client.on('message', message => {
     // Send the user's avatar URL
     message.reply(message.author.avatarURL);
   }
+  if (message.content.startsWith('!avatar ')) {
+    // Send the user's avatar URL
+    message.reply(message.author.avatarURL);
+   const user = message.mentions.users.first();
+       if (user) {
+      // Now we get the member from the user
+      const member = message.guild.member(user);
+             if (member) {
+              message.reply(message.member.avatarURL);
+             }
+      }
+  }
 });
 // THIS  MUST  BE  THIS  WAY
 
