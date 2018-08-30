@@ -22,9 +22,6 @@ client.on('message', message => {
     if (message.content === '!loveyourself') {
         message.reply('You can\'t stop me loving myself!');
     }
-    if (['ukyo', 'kodachi', 'kuno'].indexOf(message.content) === -1) {
-        message.reply('Hmph.'); 
-    }
     if (message.content === 'ayy') {
         message.reply('lmao'); 
     }
