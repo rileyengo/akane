@@ -131,7 +131,7 @@ client.on('message', message => {
 		description: "A smol multipurpose bot!",
 		fields: [{
 			name: "About Akane",
-			value: "A small multipurpose bot maintained by [https://github.com/Americhino](Americhino)."
+			value: "A small multipurpose bot maintained by [Americhino](https://github.com/Americhino)."
 		  }
 		],
 		timestamp: new Date(),
