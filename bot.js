@@ -91,24 +91,7 @@ client.on('message', message => {
 	if (responseObject[message.content]) {
 		message.channel.send(responseObject[message.content]);
 	} 
-	/*
-	if (command === 'google') {
-	const cheerio = require('cheerio'),
-		  snekfetch = require('snekfetch'),
-		  querystring = require('querystring');
-	async function googleCommand(msg, args) {
-		let searchMessage = await message.reply('Searching... Sec.');
-		let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(msg.content)}`;
-		return snekfetch.get(searchUrl).then((result) => {
-			let $ = cheerio.load(result.text);
-			let googleData = $('.r').first().find('a').first().attr('href');
-			googleData = querystring.parse(googleData.replace('/url?', ''));
-			searchMessage.edit(`Result found!\n${googleData.q}`);
-		}).catch((err) => {
-			searchMessage.edit('No results found!');
-		});
-	} */
-}/* SEE BETA BRANCH FOR THIS ONE
+	/* SEE BETA BRANCH FOR THIS ONE
 	if (command === 'trivia') {
 		const questions = ["What is the name of BTS' third Love Yourself album?", "http://yahoo.com", "http://msn.com", "http://apple.com"];
 		const question = questions[Math.floor(Math.random() * favorites.length)];
