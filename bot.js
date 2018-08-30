@@ -119,6 +119,14 @@ client.on('message', message => {
              }
       }
   } */
+	// !hug
+	if (message.content === '!hug') {
+    // Send the user's avatar URL
+    message.reply('Love you, bae! <3');
+	message.react("\:two_hearts:")
+	message.react("\:sparkling_heart:")
+  }
+	// !info
 	if (message.content === '!info') {
 		message.channel.send({embed: {
 		color: 0xe24b4b,
