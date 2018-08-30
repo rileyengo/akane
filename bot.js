@@ -123,8 +123,9 @@ client.on('message', message => {
 	if (message.content === '!hug') {
     // Send the user's avatar URL
     message.reply('Love you, bae! <3');
-	message.react("\:two_hearts:")
-	message.react("\:sparkling_heart:")
+	message.react("✨")
+	message.react("💖")
+	message.react("💕")
   }
 	// !info
 	if (message.content === '!info') {
