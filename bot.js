@@ -119,6 +119,29 @@ client.on('message', message => {
              }
       }
   } */
+	if (message.content === '!info') {
+		message.channel.send({embed: {
+		color: e24b4b,
+		author: {
+		  name: client.user.username,
+		  icon_url: client.user.avatarURL
+		},
+		title: "Akane",
+		url: "https://github.com/Americhino/akane",
+		description: "A smol multipurpose bot!",
+		fields: [{
+			name: "About Akane",
+			value: "A small multipurpose bot maintained by [https://github.com/Americhino](Americhino)."
+		  }
+		],
+		timestamp: new Date(),
+		footer: {
+		  icon_url: client.user.avatarURL,
+		  text: "© 2018 Americhino"
+		}
+	  }
+	});
+	}
 });
 // THIS  MUST  BE  THIS  WAY
 
