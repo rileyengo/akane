@@ -24,7 +24,7 @@ client.on('message', message => {
         message.reply('You can\'t stop me loving myself!');
     }
     if (message.content === 'ayy') {
-        message.reply('lmao'); 
+        message.send('LMAOO'); 
     }
  // If the message content starts with "!kick"
  if (message.content.startsWith('!kick')) {
