@@ -101,11 +101,11 @@ client.on('message', message => {
       message.reply('you didn\'t mention the user to ban!');
     }
   }
-   // If the message is "what is my avatar"
+  // If message is '!avatar'
   if (message.content === '!avatar') {
     // Send the user's avatar URL
     message.reply(message.author.avatarURL);
-  }
+  } /*
   if (message.content.startsWith('!avatar ')) {
     // Send the user's avatar URL
     message.reply(message.author.avatarURL);
@@ -117,7 +117,7 @@ client.on('message', message => {
               message.reply(message.user.avatarURL);
              }
       }
-  }
+  } */
 });
 // THIS  MUST  BE  THIS  WAY
 
