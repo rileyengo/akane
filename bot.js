@@ -5,7 +5,6 @@ const client = new Discord.Client();
  
 
 client.on('ready', () => {
-    console.log('I am ready!'); 
 	client.user.setActivity({game: {name: "Ranma, Ranma, don't make me wild like you!", type: 0}});
 });
 
