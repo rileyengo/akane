@@ -114,7 +114,7 @@ client.on('message', message => {
       // Now we get the member from the user
       const member = message.guild.member(user);
              if (member) {
-              message.reply(message.member.avatarURL);
+              message.reply(message.user.avatarURL);
              }
       }
   }
