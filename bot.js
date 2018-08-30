@@ -13,7 +13,6 @@ client.on('ready', () => {
  
 
 client.on('message', message => {
-				var randomLoveYourself = 'They call me artist, but they can\'t all me idol :)', 'It\'s in our DNA ;)', 'fAKE loVE';
     if (message.content === '!ping') {
         message.reply('pong');
     }
@@ -21,10 +20,13 @@ client.on('message', message => {
         message.reply('我爱你！ Wo ai ni!');
     }
     if (message.content === '!loveyourself') {
-        message.reply(randomLoveYourself);
+        message.reply('You can\'t stop me loving myself!');
     }
     if (['shampoo', 'ukyo', 'kodachi', 'kuno'].indexOf(message.content) === -1) {
         message.reply('Hmph.'); 
+    }
+    if (message.content === 'ayy') {
+        message.reply('lmao'); 
     }
 });
 
