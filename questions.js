@@ -1,8 +1,6 @@
 function Questions(divname) {
    this.QText   = new Array(20); // The questions
    this.QAnswer = new Array(20); // The correct answers
-   this.QChoice = new Array(80); // The possible multi-choice values
-   this.thisAns = new Array(10); // The answers for this page
    this.Answer  = new Array(10); // The user's answers
    this.anchor = document.getElementById(divname);
 
