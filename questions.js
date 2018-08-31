@@ -111,9 +111,9 @@ function Questions(divname) {
    this.QChoice[79] = "Lisbon";
 
    // Set the correct answers
-   this.QAnswer[0] = 3;
-   this.QAnswer[1] = 2;
-   this.QAnswer[2] = 2;
+   this.QAnswer[0] = 2;
+   this.QAnswer[1] = 5;
+   this.QAnswer[2] = 9;
    this.QAnswer[3] = 3;
    this.QAnswer[4] = 1;
    this.QAnswer[5] = 4;
@@ -130,5 +130,5 @@ function Questions(divname) {
    this.QAnswer[16] = 1;
    this.QAnswer[17] = 2;
    this.QAnswer[18] = 4;
-   this.QAnswer[19] = 3;
+   this.QAnswer[19] = 79;
 }
