@@ -85,10 +85,10 @@ client.on('message', message => {
 				errors: ['time'],
 			})
 				.then((collected) => {
-				message.channel.send(`Your answer was: ${collected.first().content}`);
+				message.channel.send(`Correct! The answer was ${collected.first().content}.`);
 			})
 			.catch(() => {
-				message.channel.send('Wrong! The correct answer was ' + QAnswer + '.');
+				message.channel.send('Wrong! The correct answer was ${QAnswer}.');
 			});
 		});
   	} /*
