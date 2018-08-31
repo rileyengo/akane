@@ -64,12 +64,12 @@ client.on('message', message => {
 		let member = message.mentions.members.first();
 		let reason = args.slice(1).join(" ");
 		member.kick(reason);
-	}
+	} /*
 	if (command === "say"){
 		let text = args.slice(1).join(" ");
 		message.delete();
 		message.channel.send(text);
-	} /*
+	}
 	if (command === "addrole"){
 		let role = message.guild.roles.find("name", "Team Mystic");
 		let member = message.mentions.members.first();
