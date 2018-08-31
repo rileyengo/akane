@@ -36,6 +36,8 @@ client.on('message', message => {
 						"\"All you need is love.\" \n *~ The Beatles*",
 						"\"a rivr of gold \n is flowing thru \n all our hearts\" \n *~ bill bissett*",
 						"\"Where hope grows, miracles blossom.\" \n *~ Elna Rae*",
+						"\"Living without passion is like being dead.\" \n *~ Jeon Jungkook*",
+						"\"Is it love if I take you or is it love if I set you free?\" \n *~ Monika*",
 					   ];
 		const quote = quotes[Math.floor(Math.random() * quotes.length)];
 		message.channel.send(quote)
