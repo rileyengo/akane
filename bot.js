@@ -23,7 +23,7 @@ client.on('message', message => {
         message.reply('我爱你! Wo ai ni!');
     }
     if (command === 'loveyourself') {
-		const loveYourself = ['You can\'t stop me loving myself!', 'It\'s all fAKE loVE', 'It\'s in our DNA.']
+	const loveYourself = ['You can\'t stop me loving myself!', 'It\'s all fAKE loVE', 'It\'s in our DNA.']
         message.channel.send(loveYourself);
     }
     if (message.content === 'ayy') {
@@ -73,6 +73,23 @@ client.on('message', message => {
 	}
 	if (command === 'avatar') {
     	message.reply(message.author.avatarURL);
+  	}
+	if (command === 'trivia') {
+		const allQuestions = require("./questions.js");
+    	message.reply('Trivia time! ' + QText)
+			.then(() => {
+			message.channel.awaitMessages(response => response.content === QAnswer, {
+				max: 1,
+				time: 30000,
+				errors: ['time'],
+			})
+				.then((collected) => {
+				message.channel.send(`Your answer was: ${collected.first().content}`);
+			})
+			.catch(() => {
+				message.channel.send('Wrong!');
+			});
+		});
   	} /*
   if (message.content.startsWith('!avatar ')) {
     // Send the user's avatar URL
