@@ -7,9 +7,6 @@ const client = new Discord.Client();
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: 'Ranma 1/2', type: 1 } });
 });
-
- 
-
 client.on('message', message => {
 	const prefix = '!';
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -47,39 +44,14 @@ client.on('message', message => {
     	message.channel.send(`Server name: ${message.guild.name}#${message.guild.discriminator}\nTotal members: ${message.guild.memberCount}`);
 	}
 	if (command === `user`) {
-		let member = message.mentions.members.first();
-		let reason = args.slice(1).join(" ");
-		const embed = new Discord.RichEmbed()
-		.setTitle(member.user.tag)
-		.setAuthor(member.user.username, member.user.displayAvatarURL)
-		.setColor(0x00AE86)
-		.setFooter(member.user.username, member.user.displayAvatarURL)
-		// .setImage("http://i.imgur.com/yVpymuV.png")
-		.setThumbnail(member.user.avatarURL)
-		.setTimestamp()
-		.addField("Nickname",
-				  member.displayName)
-		.addField("User ID",
-				  member.id)
-		.addField("Joined Guild",
-				  member.joinedAt)
-		.addField("Created at",
-				  member.user.createdAt)
-		.addField("Status",
-				  member.presence.status)
-		.addField("Bot",
-				  member.user.bot)
-		.addField("Presence",
-				  member.user.presence.name)
-		.addField("Roles",
-				  member.roles.every())
-		message.channel.send({embed});
-    	// message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+		const infoEmbed = require("./userinfo.js");
+		message.channel.send(infoEmbed.embed);
 	}
 	if (command === "kick") {
 		let member = message.mentions.members.first();
 		let reason = args.slice(1).join(" ");
 		member.kick(reason);
+		message.reply('Successfully kicked ${user.tag}!');
 	} /*
 	if (command === "say"){
 		let text = args.slice(1).join(" ");
