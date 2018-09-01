@@ -75,8 +75,7 @@ client.on('message', message => {
     	message.reply(message.author.avatarURL);
   	}
 	if (command === 'trivia') {
-		const QText = require("./questions.js");
-		const QAnswer = require("./questions.js");
+		const questions = require("./questions.js");
     	message.reply('Trivia time! ' + questions.QText + '\n You have 15 seconds to answer.')
 			.then(() => {
 			message.channel.awaitMessages(response => response.content === questions.QAnswer, {
@@ -88,7 +87,7 @@ client.on('message', message => {
 				message.channel.send(`Correct! The answer was ${collected.first().content}.`);
 			})
 			.catch(() => {
-				message.channel.send('Wrong! The correct answer was ' + QAnswer + '.');
+				message.channel.send('Wrong! The correct answer was ' + questions.QAnswer + '.');
 			});
 		});
   	} /*
