@@ -26,21 +26,8 @@ client.on('message', message => {
         message.reply('我爱你! Wo ai ni!');
     }
     if (command === 'quote') {
-		const quotes = ["\"What doesn't kill me makes me stronger.\" \n *~ Johann Wolfgang von Goethe*", 
-						"\"You're amazing just the way you are.\" \n *~ Bruno Mars*", 
-						"\"Still, like air, I rise.\" \n *~ Maya Angelou*", 
-						"\"To infinity and beyond!\" \n *~ Buzz Lightyear*", 
-						"\"Playing safe is boring.\" \n *~ Sandy Lam*", 
-						"\"If you can dream it, you can do it.\" \n *~ Walt Disney*", 
-						"\"You can't stop me loving myself.\" \n *~ BTS*", 
-						"\"All you need is love.\" \n *~ The Beatles*",
-						"\"a rivr of gold \n is flowing thru \n all our hearts\" \n *~ bill bissett*",
-						"\"Where hope grows, miracles blossom.\" \n *~ Elna Rae*",
-						"\"Living without passion is like being dead.\" \n *~ Jeon Jungkook*",
-						"\"Is it love if I take you or is it love if I set you free?\" \n *~ Monika*",
-					   ];
-		const quote = quotes[Math.floor(Math.random() * quotes.length)];
-		message.channel.send(quote)
+		const randomQuote = require("./quotes.js");
+		message.channel.send(randomQuote.quote)
     }
     if (message.content === 'ayy') {
         message.channel.send('LMAOO'); 
@@ -63,7 +50,7 @@ client.on('message', message => {
 		let member = message.mentions.members.first();
 		let reason = args.slice(1).join(" ");
 		const embed = new Discord.RichEmbed()
-		.setTitle(member.tag)
+		.setTitle(member.user.tag)
 		.setAuthor(member.user.username, member.user.displayAvatarURL)
 		.setColor(0x00AE86)
 		.setFooter(member.user.username, member.user.displayAvatarURL)
@@ -74,16 +61,18 @@ client.on('message', message => {
 				  member.displayName)
 		.addField("User ID",
 				  member.id)
-		.addField("Joined guild",
+		.addField("Joined Guild",
 				  member.joinedAt)
 		.addField("Created at",
-				  member.createdAt)
+				  member.user.createdAt)
 		.addField("Status",
 				  member.presence.status)
+		.addField("Bot",
+				  member.user.bot)
 		.addField("Presence",
-				  member.presence)
+				  member.user.presence)
 		.addField("Roles",
-				  member.presence.roles)
+				  member.roles)
 		message.channel.send({embed});
     	// message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	}
