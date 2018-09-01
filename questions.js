@@ -1,6 +1,7 @@
 module.exports.Questions = "Trivia by Americhino"
-   module.exports.QText   = new Array(1); // The questions
+   module.exports.QText   = Math.floor(Math.random() * 80); // The questions
    module.exports.QAnswer = new Array(1); // The correct answers
+   const QSelect = Math.floor(Math.random() * 80)
    // OK, set the questions
    this.QText[0] = "What is the capital of Norway?";
    this.QText[1] = "What is the capital of Hungary?";
