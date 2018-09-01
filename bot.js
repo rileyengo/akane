@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const { FriendlyError } = require('discord.js-commando');
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: 'Ranma 1/2', type: 1 } });
 });
