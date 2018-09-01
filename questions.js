@@ -1,6 +1,7 @@
 module.exports.Questions = "Trivia by Americhino"
    module.exports.QText   = new Array(20); // The questions
    module.exports.QAnswer = new Array(20); // The correct answers
+   module.exports.QChoice = new Array(80); // The possible multi-choice values
    module.exports.QSelect = Math.floor(Math.random() * module.exports.QText.length);
 
    // OK, set the questions
