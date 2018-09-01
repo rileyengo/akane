@@ -47,4 +47,4 @@ require(["jquery"], function ($) {
 			.addField("Presence",
 				message.author.presence.name)
 	}
-}
+});
