@@ -3,7 +3,7 @@ const client = new Discord.Client();
 client.on('message', message => {
 	if (command === 'user') {
 		let member = message.mentions.members.first();
-		let embed = new Discord.RichEmbed();
+		const embed = new Discord.RichEmbed()
 			.setTitle(member.user.tag)
 			.setAuthor(member.user.username, member.user.displayAvatarURL)
 			.setColor(0x00AE86)
@@ -24,7 +24,7 @@ client.on('message', message => {
 			.addField("Bot",
 			member.user.bot)
 			.addField("Presence",
-			member.user.presence.name)
+			member.user.presence.name);
 			message.channel.send({embed});
 	}
 });
