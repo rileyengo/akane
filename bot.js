@@ -41,7 +41,31 @@ client.on('message', message => {
 		message.react('💕')
 	}
 	if (command === `server`) {
-    	message.channel.send(`Server name: ${message.guild.name}#${message.guild.discriminator}\nTotal members: ${message.guild.memberCount}`);
+		let member = message.mentions.members.first();
+		const embed = new Discord.RichEmbed()
+			.setTitle(message.guild.name)
+			.setAuthor(message.guild.name, message.guild.iconURL)
+			.setColor(0x00AE86)
+			.setFooter(message.guild.username, message.author.displayAvatarURL)
+			// .setImage("http://i.imgur.com/yVpymuV.png")
+			.setThumbnail(message.guild.iconURL)
+			.setTimestamp()
+			.addField("Owner",
+			message.guild.owner)
+			.addField("ID",
+			message.guild.id)
+			.addField("Region",
+			message.guild.region)
+			.addField("Created at",
+			message.guild.createdAt)
+			.addField("Channels",
+			message.guild.channels)
+			.addField("Users",
+			message.guild.memberCount)
+			.addField("Roles",
+			message.guild.roles);
+		message.channel.send({embed});
+    	// message.channel.send(`Server name: ${message.guild.name}#${message.guild.discriminator}\nTotal members: ${message.guild.memberCount}`);
 	}
 	if (command === `user`) {
 		let member = message.mentions.members.first();
@@ -49,7 +73,7 @@ client.on('message', message => {
 			.setTitle(member.user.tag)
 			.setAuthor(member.user.username, member.user.displayAvatarURL)
 			.setColor(0x00AE86)
-			.setFooter(member.user.username, member.user.displayAvatarURL)
+			.setFooter(message.author.username, message.author.displayAvatarURL)
 			// .setImage("http://i.imgur.com/yVpymuV.png")
 			.setThumbnail(member.user.avatarURL)
 			.setTimestamp()
