@@ -1,6 +1,8 @@
-
-module.exports.embed = new Discord.RichEmbed();
 let member = message.mentions.members.first();
+let embed = new Discord.RichEmbed();
+/*********************************************/
+module.exports.embed = embed
+/*********************************************/
 	.setTitle(member.user.tag)
 	.setAuthor(member.user.username, member.user.displayAvatarURL)
 	.setColor(0x00AE86)
