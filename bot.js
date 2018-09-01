@@ -50,7 +50,7 @@ client.on('message', message => {
 		let member = message.mentions.members.first() || message.author;
 		let reason = args.slice(1).join(" ");
 		const embed = new Discord.RichEmbed()
-		.setTitle(member.user.tag)
+		.setTitle(member.user.tag || message.author.tag)
 		.setAuthor(member.user.username, member.user.displayAvatarURL)
 		.setColor(0x00AE86)
 		.setFooter(member.user.username, member.user.displayAvatarURL)
