@@ -1,7 +1,7 @@
-module.exports.Questions() {
-   const QText   = new Array(20); // The questions
-   const QAnswer = new Array(20); // The correct answers
-   const QSelect = Math.floor(Math.random() * QText.length);
+module.exports.Questions = "Trivia by Americhino"
+   module.exports.QText   = new Array(20); // The questions
+   module.exports.QAnswer = new Array(20); // The correct answers
+   module.exports.QSelect = Math.floor(Math.random() * QText.length);
 
    // OK, set the questions
    this.QText[0] = "What is the capital of Norway";
@@ -128,4 +128,3 @@ module.exports.Questions() {
    this.QAnswer[17] = 2;
    this.QAnswer[18] = 4;
    this.QAnswer[19] = 79;
-}
