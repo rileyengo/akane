@@ -8,7 +8,6 @@
 	},
     "dependencies": {
 		"discord.js": "^12.0.0",
-		"request": "2.81.0",
 		"ytdl-core" :  "github:fent/node-ytdl-core#master",
 		"node-opus" : "^0.2.1"
 	}
