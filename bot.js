@@ -57,7 +57,7 @@ client.on('message', message => {
 		message.react('💕')
 	}
 	if (command === `server`) {
-    	message.channel.send(`Server name: ${message.guild.name}\nTotal members: ${message.guild.memberCount}`);
+    	message.channel.send(`Server name: ${message.guild.name}#${message.guild.discriminator}\nTotal members: ${message.guild.memberCount}`);
 	}
 	if (command === `user-info`) {
     	message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
