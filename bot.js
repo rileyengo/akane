@@ -36,6 +36,9 @@ client.on('message', message => {
 		message.react('💖')
 		message.react('💕')
 	}
+	if (command === `music`) {
+		require("./music");
+	}
 	if (command === `server`) {
 		let member = message.mentions.members.first();
 		const embed = new Discord.RichEmbed()
