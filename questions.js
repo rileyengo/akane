@@ -1,8 +1,7 @@
-function Questions(divname) {
-   this.QText   = new Array(20); // The questions
-   this.QAnswer = new Array(20); // The correct answers
-   this.Answer  = new Array(10); // The user's answers
-   this.anchor = document.getElementById(divname);
+module.exports.Questions() {
+   const QText   = new Array(20); // The questions
+   const QAnswer = new Array(20); // The correct answers
+   const QSelect = Math.floor(Math.random() * QText.length);
 
    // OK, set the questions
    this.QText[0] = "What is the capital of Norway";
