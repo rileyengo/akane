@@ -72,7 +72,7 @@ client.on('message', message => {
 		.addField("Presence",
 				  member.user.presence.name)
 		.addField("Roles",
-				  member.role.name.every())
+				  member.roles.every())
 		message.channel.send({embed});
     	// message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	}
