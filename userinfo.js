@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
 client.on('message', message => {
 	let member = message.mentions.members.first();
 	let embed = new Discord.RichEmbed();
