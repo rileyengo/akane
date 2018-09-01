@@ -76,8 +76,7 @@ client.on('message', message => {
   	}
 	if (command === 'trivia') {
 	const questions = require("./questions.js");
-	const QSelect = Math.floor(Math.random() * 80)
-	message.channel.send(QSelect);
+	message.channel.send(questions.QSelect);
     	message.reply('Trivia time! ' + questions.QText + '\n You have 15 seconds to answer.')
 			.then(() => {
 			message.channel.awaitMessages(response => response.content === questions.QAnswer, {
