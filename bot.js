@@ -47,7 +47,7 @@ client.on('message', message => {
 			.setThumbnail(message.guild.iconURL)
 			.setTimestamp()
 			.addField("Owner",
-			\<\@\!message.guild.ownerID\>)
+			"<@!${message.guild.ownerID}>")
 			.addField("ID",
 			message.guild.id)
 			.addField("Region",
