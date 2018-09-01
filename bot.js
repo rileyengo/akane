@@ -64,16 +64,16 @@ client.on('message', message => {
 		let reason = args.slice(1).join(" ");
 		const embed = new Discord.RichEmbed()
 		.setTitle(member.tag)
-		.setAuthor(member.username, member.avatarURL)
+		.setAuthor(member.user.username, member.user.avatarURL)
 		.setColor(0x00AE86)
-		.setFooter(member.username, message.author.avatarURL)
+		.setFooter(member.user.username, message.user.avatarURL)
 		// .setImage("http://i.imgur.com/yVpymuV.png")
-		.setThumbnail(member.avatarURL)
+		.setThumbnail(member.user.avatarURL)
 		.setTimestamp()
 		.addField("Nickname",
 				  member.displayName)
 		.addField("User ID",
-				  `member.id`)
+				  member.id)
 		.addField("Joined guild",
 				  member.joinedAt)
 		.addField("Created at",
