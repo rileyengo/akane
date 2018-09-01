@@ -22,9 +22,7 @@ client.on('message', message => {
 			.addField("Status",
 			member.presence.status)
 			.addField("Bot",
-			member.user.bot)
-			.addField("Presence",
-			member.user.presence.name);
-			message.channel.send({embed});
+			member.user.bot);
+		message.channel.send({embed});
 	}
 });
