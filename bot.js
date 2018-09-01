@@ -1,9 +1,5 @@
 const Discord = require('discord.js');
-
 const client = new Discord.Client();
-
- 
-
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: 'Ranma 1/2', type: 1 } });
 });
@@ -46,12 +42,12 @@ client.on('message', message => {
 			.setTitle(message.guild.name)
 			.setAuthor(message.guild.name, message.guild.iconURL)
 			.setColor(0x00AE86)
-			.setFooter(message.guild.username, message.author.displayAvatarURL)
+			.setFooter(message.author.tag, message.author.displayAvatarURL)
 			// .setImage("http://i.imgur.com/yVpymuV.png")
 			.setThumbnail(message.guild.iconURL)
 			.setTimestamp()
 			.addField("Owner",
-			message.guild.owner)
+			\<\@\!message.guild.ownerID\>)
 			.addField("ID",
 			message.guild.id)
 			.addField("Region",
@@ -73,7 +69,7 @@ client.on('message', message => {
 			.setTitle(member.user.tag)
 			.setAuthor(member.user.username, member.user.displayAvatarURL)
 			.setColor(0x00AE86)
-			.setFooter(message.author.username, message.author.displayAvatarURL)
+			.setFooter(message.author.tag, message.author.displayAvatarURL)
 			// .setImage("http://i.imgur.com/yVpymuV.png")
 			.setThumbnail(member.user.avatarURL)
 			.setTimestamp()
