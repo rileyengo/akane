@@ -1,0 +1,15 @@
+module.exports.quotes = [ // "\"Example Quote\" \n *~ Person*",
+						"\"What doesn't kill me makes me stronger.\" \n *~ Johann Wolfgang von Goethe*", 
+						"\"You're amazing just the way you are.\" \n *~ Bruno Mars*", 
+						"\"Still, like air, I rise.\" \n *~ Maya Angelou*", 
+						"\"To infinity and beyond!\" \n *~ Buzz Lightyear*", 
+						"\"Playing safe is boring.\" \n *~ Sandy Lam*", 
+						"\"If you can dream it, you can do it.\" \n *~ Walt Disney*", 
+						"\"You can't stop me loving myself.\" \n *~ BTS*", 
+						"\"All you need is love.\" \n *~ The Beatles*",
+						"\"a rivr of gold \n is flowing thru \n all our hearts\" \n *~ bill bissett*",
+						"\"Where hope grows, miracles blossom.\" \n *~ Elna Rae*",
+						"\"Living without passion is like being dead.\" \n *~ Jeon Jungkook*",
+						"\"Is it love if I take you or is it love if I set you free?\" \n *~ Monika*",
+			   			];
+module.exports.quote = return module.exports.quotes[Math.floor(Math.random() * module.exports.quotes.length)];
