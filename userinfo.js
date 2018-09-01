@@ -1,5 +1,6 @@
-require(["jquery"], function ($) {
-	if ($(message.mentions).exists()) {
+// You need to mention someone for now, rip
+/* require(["jquery"], function ($) {
+	if ($(message.mentions).exists()) { */
 		module.exports.member = message.mentions.members.first();
 		module.exports.embed = new Discord.RichEmbed()
 			.setTitle(member.user.tag)
@@ -22,7 +23,7 @@ require(["jquery"], function ($) {
 			.addField("Bot",
 				member.user.bot)
 			.addField("Presence",
-				member.user.presence.name)
+				member.user.presence.name) /*
 	} else {
 		module.exports.embed = new Discord.RichEmbed()
 			.setTitle(message.author.tag)
@@ -47,4 +48,4 @@ require(["jquery"], function ($) {
 			.addField("Presence",
 				message.author.presence.name)
 	}
-});
+}); */
