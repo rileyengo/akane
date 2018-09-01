@@ -77,9 +77,9 @@ client.on('message', message => {
 	if (command === 'trivia') {
 		const QText = require("./questions.js");
 		const QAnswer = require("./questions.js");
-    	message.reply('Trivia time! ' + QText + '\n You have 15 seconds to answer.')
+    	message.reply('Trivia time! ' + questions.QText + '\n You have 15 seconds to answer.')
 			.then(() => {
-			message.channel.awaitMessages(response => response.content === QAnswer, {
+			message.channel.awaitMessages(response => response.content === questions.QAnswer, {
 				max: 1,
 				time: 15000,
 				errors: ['time'],
