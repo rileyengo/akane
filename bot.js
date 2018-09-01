@@ -59,7 +59,9 @@ client.on('message', message => {
 	if (command === `server`) {
     	message.channel.send(`Server name: ${message.guild.name}#${message.guild.discriminator}\nTotal members: ${message.guild.memberCount}`);
 	}
-	if (command === `user-info`) {
+	if (command === `user`) {
+		let member = message.mentions.members.first();
+		let reason = args.slice(1).join(" ");
 		const embed = new Discord.RichEmbed()
 		.setTitle(message.author.tag)
 		.setAuthor(message.author.username, message.author.avatarURL)
@@ -69,13 +71,13 @@ client.on('message', message => {
 		.setThumbnail(message.author.avatarURL)
 		.setTimestamp()
 		.addField("User ID",
-				  message.author.id)
+				  member.id)
 		.addField("Created at",
-				  message.author.createdTimestamp)
+				  member.createdAt)
 		.addField("Status",
-				  message.author.presence.status)
-		.addField("Status",
-				  message.author.presence.status)
+				  member.presence.status)
+		.addField("Playing",
+				  member.presence.game)
 		message.channel.send({embed});
     	// message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	}
