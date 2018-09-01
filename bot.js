@@ -76,7 +76,7 @@ client.on('message', message => {
   	}
 	if (command === 'trivia') {
 	const questions = require("./questions.js");
-	message.channel.send(questions.QSelect([/([^\D_]+[^\s-]*) */]));
+	message.channel.send(questions.QSelect());
     	message.reply('Trivia time! ' + questions.QText + '\n You have 15 seconds to answer.')
 			.then(() => {
 			message.channel.awaitMessages(response => response.content === questions.QAnswer, {
