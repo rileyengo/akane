@@ -12,4 +12,4 @@ module.exports.quotes = [ // "\"Example Quote\" \n *~ Person*",
 						"\"Living without passion is like being dead.\" \n *~ Jeon Jungkook*",
 						"\"Is it love if I take you or is it love if I set you free?\" \n *~ Monika*",
 			   			];
-module.exports.quote = return module.exports.quotes[Math.floor(Math.random() * module.exports.quotes.length)];
+module.exports.quote = module.exports.quotes[Math.floor(Math.random() * module.exports.quotes.length)];
