@@ -60,7 +60,22 @@ client.on('message', message => {
     	message.channel.send(`Server name: ${message.guild.name}#${message.guild.discriminator}\nTotal members: ${message.guild.memberCount}`);
 	}
 	if (command === `user-info`) {
-    	message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+		const embed = new Discord.RichEmbed()
+		.setTitle(message.author.username + '#' + message.author.tag)
+		.setAuthor(message.author.username, message.author.avatarURL)
+		.setColor(0x00AE86)
+		.setFooter(message.author.username, message.author.avatarURL)
+		// .setImage("http://i.imgur.com/yVpymuV.png")
+		.setThumbnail(message.author.avatarURL)
+		.setTimestamp()
+		.addField("User ID",
+				  message.author.id)
+		.addField("Nickname",
+				  message.guild.name)
+		.addField("Status",
+				  message.author.presence.status)
+		message.channel.send({embed});
+    	// message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	}
 	if (command === "kick") {
 		let member = message.mentions.members.first();
