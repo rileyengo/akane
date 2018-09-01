@@ -1,8 +1,7 @@
 module.exports.Questions = "Trivia by Americhino"
    module.exports.QText   = new Array(1); // The questions
    module.exports.QAnswer = new Array(1); // The correct answers
-   module.exports.QSelect = QSelect
-
+   module.exports.QSelect = QSelect()
    // Umm try to make QSelect a thing
    function QSelect() { Math.floor(Math.random() * module.exports.QText.length) }
    // OK, set the questions
@@ -45,5 +44,5 @@ module.exports.Questions = "Trivia by Americhino"
    this.QAnswer[15] = "Warsaw";
    this.QAnswer[16] = "Rome";
    this.QAnswer[17] = "New Delhi";
-   this.QAnswer[18] = "Canada";
+   this.QAnswer[18] = "Ottawa";
    this.QAnswer[19] = "Portugal";
