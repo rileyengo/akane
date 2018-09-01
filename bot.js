@@ -63,21 +63,27 @@ client.on('message', message => {
 		let member = message.mentions.members.first();
 		let reason = args.slice(1).join(" ");
 		const embed = new Discord.RichEmbed()
-		.setTitle(message.author.tag)
-		.setAuthor(message.author.username, message.author.avatarURL)
+		.setTitle(member.tag)
+		.setAuthor(member.username, member.avatarURL)
 		.setColor(0x00AE86)
-		.setFooter(message.author.username, message.author.avatarURL)
+		.setFooter(member.username, message.author.avatarURL)
 		// .setImage("http://i.imgur.com/yVpymuV.png")
-		.setThumbnail(message.author.avatarURL)
+		.setThumbnail(member.avatarURL)
 		.setTimestamp()
+		.addField("Nickname",
+				  member.displayName)
 		.addField("User ID",
-				  member.id)
+				  `member.id`)
+		.addField("Joined guild",
+				  member.joinedAt)
 		.addField("Created at",
 				  member.createdAt)
 		.addField("Status",
 				  member.presence.status)
-		.addField("Playing",
-				  member.presence.game)
+		.addField("Presence",
+				  member.presence)
+		.addField("Roles",
+				  member.presence.roles)
 		message.channel.send({embed});
     	// message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	}
