@@ -64,9 +64,9 @@ client.on('message', message => {
 		let reason = args.slice(1).join(" ");
 		const embed = new Discord.RichEmbed()
 		.setTitle(member.tag)
-		.setAuthor(member.user.username, member.user.avatarURL)
+		.setAuthor(member.user.username, member.user.displayAvatarURL)
 		.setColor(0x00AE86)
-		.setFooter(member.user.username, message.user.avatarURL)
+		.setFooter(member.user.username, message.user.displayAvatarURL)
 		// .setImage("http://i.imgur.com/yVpymuV.png")
 		.setThumbnail(member.user.avatarURL)
 		.setTimestamp()
