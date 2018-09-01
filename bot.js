@@ -37,7 +37,14 @@ client.on('message', message => {
 		message.react('💕')
 	}
 	if (command === `music`) {
-		require("./music");
+		require("./music/default-volume.js");
+		require("./music/max-length.js");
+		require("./music/max-songs.js");
+		require("./music/pause.js");
+		require("./music/play.js");
+		require("./music/queue.js");
+		require("./music/stop.js");
+		require("./music/skip.js");
 	}
 	if (command === `server`) {
 		let member = message.mentions.members.first();
