@@ -24,7 +24,7 @@ module.exports.Questions = "Trivia by Americhino"
    this.QText[15] = "What is the capital of Poland?";
    this.QText[16] = "What is the capital of Italy?";
    this.QText[17] = "What is the capital of India?";
-   this.QText[18] = "What is the capital of Canada"?;
+   this.QText[18] = "What is the capital of Canada?";
    this.QText[19] = "What is the capital of Portugal?";
    // Set the correct answers
    this.QAnswer[0] = "Oslo";
