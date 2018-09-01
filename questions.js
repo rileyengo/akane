@@ -4,8 +4,8 @@ module.exports.Questions = "Trivia by Americhino"
    // OK, set the questions
    module.exports.QText[0] = "What is the capital of Norway?";
    module.exports.QText[1] = "What is the capital of Hungary?";
-   module.exportsQText[2] = "What is the capital of Cyprus?";
-   module.exportsQText[3] = "What is the capital of Libya?";
+   module.exports.QText[2] = "What is the capital of Cyprus?";
+   module.exports.QText[3] = "What is the capital of Libya?";
    module.exports.QText[4] = "What is the capital of Kenya?";
    module.exports.QText[5] = "What is the capital of Nigeria?";
    module.exports.QText[6] = "What is the capital of Columbia?";
