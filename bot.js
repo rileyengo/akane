@@ -47,7 +47,7 @@ client.on('message', message => {
     	message.channel.send(`Server name: ${message.guild.name}#${message.guild.discriminator}\nTotal members: ${message.guild.memberCount}`);
 	}
 	if (command === `user`) {
-		let member = message.mentions.members.first();
+		let member = message.mentions.members.first() || message.author;
 		let reason = args.slice(1).join(" ");
 		const embed = new Discord.RichEmbed()
 		.setTitle(member.user.tag)
