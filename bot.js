@@ -47,10 +47,10 @@ client.on('message', message => {
     	message.channel.send(`Server name: ${message.guild.name}#${message.guild.discriminator}\nTotal members: ${message.guild.memberCount}`);
 	}
 	if (command === `user`) {
-		let member = message.mentions.members.first() || message.author;
+		let member = message.mentions.members.first();
 		let reason = args.slice(1).join(" ");
 		const embed = new Discord.RichEmbed()
-		.setTitle(member.user.tag || message.author.tag)
+		.setTitle(member.user.tag)
 		.setAuthor(member.user.username, member.user.displayAvatarURL)
 		.setColor(0x00AE86)
 		.setFooter(member.user.username, member.user.displayAvatarURL)
@@ -70,9 +70,9 @@ client.on('message', message => {
 		.addField("Bot",
 				  member.user.bot)
 		.addField("Presence",
-				  member.user.presence)
+				  member.user.presence.name)
 		.addField("Roles",
-				  member.roles)
+				  member.role.name.every())
 		message.channel.send({embed});
     	// message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
 	}
