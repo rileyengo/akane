@@ -2,9 +2,9 @@ module.exports.Questions = "Trivia by Americhino"
    module.exports.QText   = new Array(1); // The questions
    module.exports.QAnswer = new Array(1); // The correct answers
    module.exports.QChoice = new Array(80); // The possible multi-choice values
-   module.exports.QSelect = Math.floor(Math.random() * module.exports.QText.length);
+   module.exports.QSelect = this.QSelect
 
-   // Umm try to get QSelect
+   // Umm try to make QSelect a thing
    this.QSelect = Math.floor(Math.random() * module.exports.QText.length);
    // OK, set the questions
    this.QText[0] = "What is the capital of Norway";
