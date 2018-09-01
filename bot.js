@@ -61,7 +61,7 @@ client.on('message', message => {
 	}
 	if (command === `user-info`) {
 		const embed = new Discord.RichEmbed()
-		.setTitle(message.author.username + '#' + message.author.tag)
+		.setTitle(message.author.tag)
 		.setAuthor(message.author.username, message.author.avatarURL)
 		.setColor(0x00AE86)
 		.setFooter(message.author.username, message.author.avatarURL)
@@ -70,8 +70,10 @@ client.on('message', message => {
 		.setTimestamp()
 		.addField("User ID",
 				  message.author.id)
-		.addField("Nickname",
-				  message.guild.name)
+		.addField("Created at",
+				  message.author.createdTimestamp)
+		.addField("Status",
+				  message.author.presence.status)
 		.addField("Status",
 				  message.author.presence.status)
 		message.channel.send({embed});
