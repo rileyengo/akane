@@ -1,5 +1,5 @@
 module.exports.Questions = "Trivia by Americhino"
-   module.exports.QText   = Math.floor(Math.random() * 20); // The questions
+   module.exports.QText   = module.exports.QText[Math.floor(Math.random() * 20)]; // The questions
    module.exports.QAnswer = module.exports.QText; // The correct answers
    // OK, set the questions
    module.exports.QText[0] = "What is the capital of Norway?";
