@@ -66,7 +66,7 @@ client.on('message', message => {
 		.setTitle(member.tag)
 		.setAuthor(member.user.username, member.user.displayAvatarURL)
 		.setColor(0x00AE86)
-		.setFooter(member.user.username, message.user.displayAvatarURL)
+		.setFooter(member.user.username, member.user.displayAvatarURL)
 		// .setImage("http://i.imgur.com/yVpymuV.png")
 		.setThumbnail(member.user.avatarURL)
 		.setTimestamp()
