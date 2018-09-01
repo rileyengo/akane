@@ -5,7 +5,7 @@ module.exports.Questions = "Trivia by Americhino"
    module.exports.QSelect = QSelect
 
    // Umm try to make QSelect a thing
-   function QSelect = Math.floor(Math.random() * module.exports.QText.length);
+   function QSelect { Math.floor(Math.random() * module.exports.QText.length) }
    // OK, set the questions
    this.QText[0] = "What is the capital of Norway";
    this.QText[1] = "What is the capital of Hungary";
