@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+require("./music.js");
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: 'Ranma 1/2', type: 1 } });
 });
@@ -35,9 +36,6 @@ client.on('message', message => {
 		message.react('✨')
 		message.react('💖')
 		message.react('💕')
-	}
-	if (command === `music`) {
-		require("./music.js");
 	}
 	if (command === `server`) {
 		let member = message.mentions.members.first();
