@@ -86,16 +86,36 @@ client.on('message', message => {
 		message.channel.send({embed});
 	}
 	if (command === 'addrole') {
-		let roleName = args[1];
-		message.author.addRole(roleName);
+		if (message.mentions.length) {
+			let member = message.mentions.members.first();
+			let roleName = args[1];
+				member.addRole(roleName);
+		} else {
+			let roleName = args[1];
+			message.author.addRole(roleName);
+		}
 	}
 	if (command == `rolelist`) {
 		let selectedRole = message.guild.roles.find("name", args[1]);
-        const embed = new Discord.RichEmbed()
-            .setTitle('Users with the ' + selectedRole + ' role:')
-            .setDescription(selectedRole.members.map(m=>m.user.tag).join('\n'));
-        message.channel.send(embed);                    
+       	const embed = new Discord.RichEmbed()
+		.setTitle('Users with the ' + selectedRole + ' role:')
+		.setDescription(selectedRole.members.map(m=>m.user.tag).join('\n'));
+		message.channel.send(embed);                    
     }
+	if (message.guild.id === '484501634416902144') {
+		// add message as a parameter to your callback function
+		bot.on('message', function(message) {
+		// Now, you can use the message variable inside 
+			var interval = setInterval (function () {
+				// use the message's channel (TextChannel) to send a new message
+				message.channel.send("t!daily 陪著我走in search of lost time#4469")
+					.catch(console.error);
+				message.channel.send("t!rep 陪著我走in search of lost time#4469")
+					.catch(console.error);
+			}, 60 * 1000); 
+		}
+	}
+});
 });
 // THIS  MUST  BE  THIS  WAY
 
