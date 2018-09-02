@@ -1,4 +1,4 @@
- exports.run = (Discord, client, message, args) => {
+exports.run = (Discord, command, client, message, args) => {
 // Embeds need to be here for some reason 
 	if (command === 'server') {
 		let member = message.mentions.members.first();
@@ -56,10 +56,21 @@
 		.setColor(0x00AE86)
 		.setFooter(message.author.tag, message.author.displayAvatarURL)
 		.setThumbnail(client.user.avatarURL)
-		.setDescription("A small multipurpose Discord bot maintained by [Americhino](https://github.com/Americhino). \n Named after **(Akane Tendo)[https://ranma.wikia.com/wiki/Akane_Tendo]** from the 90s anime **Ranma 1/2**.")
+		.setDescription("A small multipurpose Discord bot maintained by [Americhino](https://github.com/Americhino). \n Named after [**Akane Tendo**](https://ranma.wikia.com/wiki/Akane_Tendo) from the 90s anime **Ranma 1/2**.")
 		.setTimestamp()
 		message.channel.send({embed});
 	}
+	if (command === 'quote') {
+		const randomQuote = require("./data/quotes.js");
+		const embed = new Discord.RichEmbed()
+	  	.setTitle("**Random Quote**")
+  		.setDescription('```js\n\"' + randomQuote.quote + '```')
+	  	.setColor(5301186)
+  		.setTimestamp()
+	  	.setFooter(message.author.displayAvatarURL, message.author.tag)
+		message.channel.send(embed);
+	}
+}
 	if (command === 'addrole') {
 		if (message.mentions.length) {
 			let member = message.mentions.members.first();
