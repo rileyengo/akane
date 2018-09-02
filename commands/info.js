@@ -18,5 +18,5 @@ exports.run = (client, message, args) => {
 		icon_url: client.user.avatarURL,
 		text: "© 2018 Americhino"
 	}
-	}
-});
+	});
+}
