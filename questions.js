@@ -2,7 +2,7 @@ module.exports.Questions = "Trivia by Americhino"
    module.exports.QText   = QSelect(); // The questions
    module.exports.QAnswer = module.exports.QText; // The correct answers
 function QSelect() {
-	const Options = new Array("norway", "hungary", "cyprus", "libya", "kenya", "nigeria", "columbia", "barbados", "australia", "pakistan", "spain", "england", "ireland", "sweden", "denmark", "poland", "italy", "india", "canada", "portugal",);;
+	const Options = new Array("norway", "hungary", "cyprus", "libya", "kenya", "nigeria", "columbia", "barbados", "australia", "pakistan", "spain", "england", "ireland", "sweden", "denmark", "poland", "italy", "india", "canada", "portugal",);
 	const Questions = {
    // OK, set the questions
    "norway": "What is the capital of Norway?",
@@ -50,6 +50,6 @@ function QSelect() {
    "portugal": "Lisbon",
 		
 	}
-	module.exports.question = Options[Math.floor(Math.random() * Options.length)]
+	module.exports.question = Questions[Math.floor(Math.random() * Options.length)]
 	module.exports.answer = Answers[module.exports.question]
 }
