@@ -84,7 +84,18 @@ client.on('message', message => {
 		.setDescription("A small multipurpose Discord bot maintained by [Americhino](https://github.com/Americhino).")
 		.setTimestamp()
 		message.channel.send({embed});
-}
+	}
+	if (command === 'addrole') {
+		let roleName = args[1];
+		message.author.addRole(roleName);
+	}
+	if (command == `rolelist`) {
+		let selectedRole = message.guild.roles.find("name", args[1]);
+        const embed = new Discord.RichEmbed()
+            .setTitle('Users with the ' + selectedRole + ' role:')
+            .setDescription(selectedRole.members.map(m=>m.user.tag).join('\n'));
+        message.channel.send(embed);                    
+    }
 });
 // THIS  MUST  BE  THIS  WAY
 
