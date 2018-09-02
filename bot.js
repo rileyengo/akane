@@ -120,25 +120,24 @@ client.on('message', message => {
 	if (responseObject[message.content]) {
 		message.channel.send(responseObject[message.content]);
 	} 
-	/* SEE BETA BRANCH FOR THIS ONE
 	if (command === 'trivia') {
-		const questions = ["What is the name of BTS' third Love Yourself album?", "http://yahoo.com", "http://msn.com", "http://apple.com"];
-		const question = questions[Math.floor(Math.random() * favorites.length)];
-		message.channel.send(questions)
+	const questions = require("./questions.js");
+    	message.reply('Trivia time! What is the capital of ' + questions.question + '? \n You have 15 seconds to answer.')
 			.then(() => {
-			message.channel.awaitMessages(response => response.content === 'test', {
+			message.channel.awaitMessages(response => response.content === questions.answer, {
 				max: 1,
-				time: 30000,
+				time: 15000,
 				errors: ['time'],
 			})
 				.then((collected) => {
-				message.channel.send(`The collected message was: ${collected.first().content}`);
+				message.channel.send('✅ Correct! The answer was' + questions.answer, '.');
 			})
-				.catch(() => {
-				message.channel.send('There was no collected message that passed the filter within the time limit!');
+			.catch(() => {
+				message.channel.send('❌ Wrong! The correct answer was ' + questions.answer + '.');
 			});
 		});
-	} 
+  	} 
+	/*
   if (message.content.startsWith('!avatar ')) {
     // Send the user's avatar URL
     message.reply(message.author.avatarURL);
