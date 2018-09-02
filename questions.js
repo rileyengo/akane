@@ -50,6 +50,6 @@ function QSelect() {
    "portugal": "Lisbon",
 		
 	}
-	module.exports.question = Questions[Math.floor(Math.random() * Options.length)]
+	module.exports.question = Options[Math.floor(Math.random() * Options.length)]
 	module.exports.answer = Answers[module.exports.question]
 }
