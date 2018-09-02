@@ -17,7 +17,7 @@ client.on('message', message => {
 		message.channel.send(responseObject[message.content]);
 	}
 	if (message.author.bot) return;
-	if (message.content.indexOf(config.prefix) !== 0) return;
+	if (message.content.indexOf(prefix) !== 0) return;
 	try {
 		let commandFile = require(`./commands/${command}.js`);
 		commandFile.run(client, message, args);
