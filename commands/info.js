@@ -1,22 +1,10 @@
 exports.run = (client, message, args) => {
-	message.channel.send({embed: {
-	color: 0xe24b4b,
-	author: {
-		name: client.user.username,
-		icon_url: client.user.avatarURL
-	},
-	title: "Akane",
-	url: "https://github.com/Americhino/akane",
-	description: "A smol multipurpose bot!",
-	fields: [{
-		name: "About Akane",
-		value: "A small multipurpose bot maintained by [Americhino](https://github.com/Americhino)."
-	}
-	],
-	timestamp: new Date(),
-	footer: {
-		icon_url: client.user.avatarURL,
-		text: "© 2018 Americhino"
-	}
-	});
+		const embed = new Discord.RichEmbed()
+		.setTitle(client.user.username)
+		.setColor(0x00AE86)
+		.setFooter(message.author.tag, message.author.displayAvatarURL)
+		.setThumbnail(client.user.avatarURL)
+		.setDescription("A small multipurpose Discord bot maintained by [Americhino](https://github.com/Americhino).")
+		.setTimestamp()
+		message.channel.send({embed});
 }
