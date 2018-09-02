@@ -84,7 +84,7 @@ client.on('message', message => {
 				errors: ['time'],
 			})
 				.then((collected) => {
-				message.channel.send('Correct! The answer was' + questions.answer '.');
+				message.channel.send('Correct! The answer was' + questions.answer, '.');
 			})
 			.catch(() => {
 				message.channel.send('Wrong! The correct answer was ' + questions.answer + '.');
