@@ -75,6 +75,16 @@ client.on('message', message => {
 				member.user.bot);
 			message.channel.send({embed});
 	}
+	if (command === 'info') {
+		const embed = new Discord.RichEmbed()
+		.setTitle(client.user.username)
+		.setColor(0x00AE86)
+		.setFooter(message.author.tag, message.author.displayAvatarURL)
+		.setThumbnail(client.user.avatarURL)
+		.setDescription("A small multipurpose Discord bot maintained by [Americhino](https://github.com/Americhino).")
+		.setTimestamp()
+		message.channel.send({embed});
+}
 });
 // THIS  MUST  BE  THIS  WAY
 
