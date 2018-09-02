@@ -49,6 +49,6 @@ function QSelect() {
    "portugal": "Lisbon",
 		
 	}
-	const question = new Array("norway", "hungary", "cyprus", "libya", "kenya", "nigeria", "columbia", "barbados", "australia", "pakistan", "spain", "england", "ireland", "sweden", "denmark", "poland", "italy", "india", "canada", "portugal",);
-	const answer = question[Math.floor(Math.random() * question.length)]
+	module.exports.question = new Array("norway", "hungary", "cyprus", "libya", "kenya", "nigeria", "columbia", "barbados", "australia", "pakistan", "spain", "england", "ireland", "sweden", "denmark", "poland", "italy", "india", "canada", "portugal",);
+	module.exports.answer = module.exports.question[Math.floor(Math.random() * module.exports.question.length)]
 }
