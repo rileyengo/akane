@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (Discord, client, message, args) => {
 		const embed = new Discord.RichEmbed()
 		.setTitle(client.user.username)
 		.setColor(0x00AE86)
