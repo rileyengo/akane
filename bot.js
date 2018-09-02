@@ -89,10 +89,9 @@ client.on('message', message => {
 		if (message.mentions.length) {
 			let member = message.mentions.members.first();
 			let roleName = args[1];
-				member.addRole(roleName);
+			member.addRole(roleName);
 		} else {
-			let roleName = args[1];
-			message.author.addRole(roleName);
+			message.channel.send('Please mention a user! \n The syntax is `!addrole <user> <role>`.');
 		}
 	}
 	if (command == `rolelist`) {
@@ -101,7 +100,7 @@ client.on('message', message => {
 		.setTitle('Users with the ' + selectedRole + ' role:')
 		.setDescription(selectedRole.members.map(m=>m.user.tag).join('\n'));
 		message.channel.send(embed);    
-    }
+    	}
 	if (message.guild.id === '484501634416902144') {
 		var interval = setInterval (function () {
 			// use the message's channel (TextChannel) to send a new message
