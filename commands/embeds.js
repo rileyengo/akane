@@ -70,7 +70,6 @@ exports.run = (Discord, command, client, message, args) => {
 	  	.setFooter(message.author.displayAvatarURL, message.author.tag)
 		message.channel.send(embed);
 	}
-}
 	if (command === 'addrole') {
 		if (message.mentions.length) {
 			let member = message.mentions.members.first();
