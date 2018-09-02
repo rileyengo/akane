@@ -20,10 +20,14 @@ client.on('message', message => {
 	if (message.author.bot) return;
 	if (message.content.indexOf(prefix) !== 0) return;
 	try {
-		let commandFile = require(`./commands/${command}.js`);
-		commandFile.run(client, message, args);
+		if (command === 'info' || command === 'user' || command === 'server' || command === 'quote') {
+			let commandFile = require(`./commands/embeds.js`);
+			commandFile.run(client, message, args);
+		} else {
+			let commandFile = require(`./commands/${command}.js`);
+			commandFile.run(client, message, args);
+		}
 	} catch (err) {
-		let commandFile = require(`./commands/embeds.js`);
 		console.error(err);
 	}
 });
