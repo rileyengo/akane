@@ -1,7 +1,7 @@
 module.exports.Questions = "World Capitals Trivia by Americhino"
 	module.exports.QText   = QSelect(); // The questions
 	module.exports.QAnswer = module.exports.QText; // The correct answers
-module.exports.QSelect() {
+module.exports.QSelect = (Questions) => {
 	const Questions = new Array("Norway", "Hungary", "Cyprus", "Libya", "Kenya", "Nigeria", "Columbia", "Barbados", "Australia", "Pakistan", "Spain", "England", "Ireland", "Sweden", "Denmark", "Poland", "Italy", "India", "Canada", "Portugal", "South Korea", "Japan", "China", "Indonesia", "France", "Serbia",);
 	const Answers = {
 	"Norway": "Oslo",
