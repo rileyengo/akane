@@ -37,12 +37,6 @@ function QSelect() {
 	"Russia": "Moscow",
 	"Ukraine": "Kiev",
 	}
-	const randomize = true;
-	const Question = {
-		while (randomize === 'true') {
-		Questions[Math.floor(Math.random() * Math.floor(Math.floor(Math.floor(Math.floor(Questions.length)))))];
-		}
-	}
-	module.exports.question = Question
+	module.exports.question = Questions[Math.floor(Math.random() * Math.floor(Math.floor(Math.floor(Math.floor(Questions.length)))))];
 	module.exports.answer = Answers[module.exports.question]
 }
