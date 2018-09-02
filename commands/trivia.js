@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-	const questions = require("./questions.js");
+	const questions = require("./trivia/questions.js");
     message.reply('Trivia time! What is the capital of ' + questions.question + '? \n You have 15 seconds to answer.')
 		.then(() => {
 		message.channel.awaitMessages(response => response.content === questions.answer, {
