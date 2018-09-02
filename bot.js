@@ -113,7 +113,7 @@ client.on('message', message => {
 				message.channel.send("t!rep 陪著我走in search of lost time#4469")
 					.catch(console.error);
 			}, 60 * 1000); 
-		}
+		})
 	}
 });
 // THIS  MUST  BE  THIS  WAY
