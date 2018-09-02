@@ -1,3 +1,7 @@
+/* @submodule		Akane/Questions
+ * @description		Collection of questions for Akane's !trivia command.
+ * @todo			Make it switch questions every time the user does !trivia
+*/
 module.exports.Questions = "World Capitals Trivia by Americhino"
 	module.exports.QText   = QSelect(); // The questions
 	module.exports.QAnswer = module.exports.QText; // The correct answers
