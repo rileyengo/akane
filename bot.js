@@ -88,7 +88,7 @@ client.on('message', message => {
 					.setColor(5301186)
 					.setTimestamp()
 					.setFooter(message.author.displayAvatarURL, message.author.tag)
-				message.channel.send(embed);
+				message.channel.send({embed});
 			}
 			if (command === 'addrole') {
 				if (message.mentions.length) {
@@ -104,7 +104,7 @@ client.on('message', message => {
 				const embed = new Discord.RichEmbed()
 				.setTitle('Users with the ' + selectedRole + ' role:')
 				.setDescription(selectedRole.members.map(m=>m.user.tag).join('\n'));
-				message.channel.send(embed);    
+				message.channel.send({embed});    
 			}
 			if (command == `avatar`) {
 				let member = message.mentions.members.first();
