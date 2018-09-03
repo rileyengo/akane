@@ -88,6 +88,9 @@ client.on('message', message => {
 				.setFooter(message.author.tag, message.author.displayAvatarURL)
 				.setThumbnail(client.user.avatarURL)
 				.setDescription("A small multipurpose Discord bot maintained by [Americhino](https://github.com/Americhino). \n Named after [**Akane Tendo**](https://ranma.wikia.com/wiki/Akane_Tendo) from the 90s anime **Ranma 1/2**.")
+				.addField("Created on", "August 28, 2018", true)
+				.addField("Creator", "Americhino#4469", true)
+				.addField("Library", "discord.js", true)
 				.setTimestamp()
 				message.channel.send({embed});
 			}
