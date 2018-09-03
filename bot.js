@@ -84,7 +84,7 @@ client.on('message', message => {
 				const randomQuote = require("./commands/data/quotes.js");
 				const embed = new Discord.RichEmbed()
 					.setTitle("**Random Quote**")
-					.setDescription("```js\n\"' + randomQuote.quote + '```")
+					.setDescription("```js\n\"${randomQuote.quote}\"```")
 					.setColor(5301186)
 					.setTimestamp()
 					.setFooter(message.author.tag, message.author.displayAvatarURL)
