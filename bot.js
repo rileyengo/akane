@@ -13,14 +13,13 @@ client.on('message', message => {
 		"lmao": "AYY",
 		"no u": "NO U"
 	}; 
-	require("./commands/embeds.js");
 	if (responseObject[message.content]) {
 		message.channel.send(responseObject[message.content]);
 	}
 	if (message.author.bot) return;
 	if (message.content.indexOf(prefix) !== 0) return;
 	try {
-		if (command === 'info' || command === 'user' || command === 'server' || command === 'quote') {
+		if (command === 'info' || command === 'user' || command === 'server' || command === 'quote' || command === 'avatar') {
 			let commandFile = require(`./commands/embeds.js`);
 			commandFile.run(client, message, args);
 		} else {
