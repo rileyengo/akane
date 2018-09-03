@@ -1,4 +1,4 @@
-exports.run = (client, message, [mention, ...reason]) => {
+exports.run = (Discord, client, message, [mention, reason]) => {
 const modRole = message.guild.me.hasPermission("KICK_MEMBERS");
 	if (!modRole)
 	return console.log("You cannot kick users.")
