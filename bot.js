@@ -21,10 +21,10 @@ client.on('message', message => {
 	try {
 		if (command === 'info' || command === 'user' || command === 'server' || command === 'quote' || command === 'avatar') {
 			let commandFile = require(`./commands/embeds.js`);
-			commandFile.run(client, message, args);
+			commandFile.run(Discord, client, message, args);
 		} else {
 			let commandFile = require(`./commands/${command}.js`);
-			commandFile.run(client, message, args);
+			commandFile.run(Discord, client, message, args);
 		}
 	} catch (err) {
 		console.error(err);
