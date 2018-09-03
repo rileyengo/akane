@@ -19,7 +19,7 @@ client.on('message', message => {
 	if (message.author.bot) return;
 	if (message.content.indexOf(prefix) !== 0) return;
 	try {
-		if (command === 'info' || command === 'user' || command === 'server' || command === 'quote' || command === 'avatar') {
+		if (command === 'info' || command === 'user' || command === 'server' || command === 'quote' || command === 'avatar' || command === 'rolelist' || command === 'addrole') {
 				if (command === 'server') {
 				let member = message.mentions.members.first();
 				const embed = new Discord.RichEmbed()
