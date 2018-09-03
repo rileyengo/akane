@@ -87,7 +87,7 @@ client.on('message', message => {
 					.setDescription("```js\n\"' + randomQuote.quote + '```")
 					.setColor(5301186)
 					.setTimestamp()
-					.setFooter(message.author.displayAvatarURL, message.author.tag)
+					.setFooter(message.author.tag, message.author.displayAvatarURL)
 				message.channel.send({embed});
 			}
 			if (command === 'addrole') {
