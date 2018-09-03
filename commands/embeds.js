@@ -86,6 +86,15 @@ exports.run = (Discord, command, client, message, args) => {
 		.setDescription(selectedRole.members.map(m=>m.user.tag).join('\n'));
 		message.channel.send(embed);    
     	}
+	if (command == `avatar`) {
+		let member = message.mentions.members.first();
+		const embed = new Discord.RichEmbed()
+			.setTitle(member.user.tag)
+			.setAuthor(member.user.username, member.user.displayAvatarURL)
+			.setColor(0x00AE86)
+			.setImage(member.user.avatarURL)
+			message.channel.send({embed});
+	}
 	if (message.guild.id === '484501634416902144') {
 		var interval = setInterval (function () {
 			// use the message's channel (TextChannel) to send a new message
