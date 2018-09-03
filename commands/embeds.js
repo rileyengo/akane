@@ -95,7 +95,7 @@ exports.run = (Discord, command, client, message, args) => {
 			.setImage(member.user.avatarURL)
 			message.channel.send({embed});
 	}
-	if (message.guild.id === '484501634416902144') {
+	/* if (message.guild.id === '484501634416902144') {
 		var interval = setInterval (function () {
 			// use the message's channel (TextChannel) to send a new message
 			message.channel.send("t!daily 陪著我走in search of lost time#4469")
@@ -103,5 +103,5 @@ exports.run = (Discord, command, client, message, args) => {
 			message.channel.send("t!rep 陪著我走in search of lost time#4469")
 				.catch(console.error);
 		}, 60 * 100000); 
-	}
+	} */
 }
