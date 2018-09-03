@@ -81,7 +81,7 @@ client.on('message', message => {
 				message.channel.send({embed});
 			}
 			if (command === 'quote') {
-				const randomQuote = require("./data/quotes.js");
+				const randomQuote = require("./commands/data/quotes.js");
 				const embed = new Discord.RichEmbed()
 				.setTitle("**Random Quote**")
 				.setDescription('```js\n\"' + randomQuote.quote + '```')
