@@ -6,8 +6,8 @@ module.exports.Questions = "World Capitals Trivia by Americhino"
 	module.exports.QText   = QSelect(); // The questions
 	module.exports.QAnswer = module.exports.QText; // The correct answers
 function QSelect() {
-	const Questions = new Array("Norway", "Hungary", "Cyprus", "Libya", "Kenya", "Nigeria", "Columbia", "Barbados", "Australia", "Pakistan", "Spain", "England", "Ireland", "Sweden", "Denmark", "Poland", "Italy", "India", "Canada", "Portugal", "South Korea", "Japan", "China", "Indonesia", "France", "Serbia",);
-	const Answers = {
+	module.exports.Questions = new Array("Norway", "Hungary", "Cyprus", "Libya", "Kenya", "Nigeria", "Columbia", "Barbados", "Australia", "Pakistan", "Spain", "England", "Ireland", "Sweden", "Denmark", "Poland", "Italy", "India", "Canada", "Portugal", "South Korea", "Japan", "China", "Indonesia", "France", "Serbia",);
+	module.exports.Answers = {
 	"Norway": "Oslo",
 	"Hungary": "Budapest",
 	"Cyprus": "Nicosia",
@@ -37,6 +37,4 @@ function QSelect() {
 	"Russia": "Moscow",
 	"Ukraine": "Kiev",
 	}
-	module.exports.question = Questions[Math.floor(Math.random() * Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Questions.length))))))))))];
-	module.exports.answer = Answers[module.exports.question]
 }
