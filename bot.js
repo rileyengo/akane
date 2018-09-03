@@ -83,11 +83,11 @@ client.on('message', message => {
 			if (command === 'quote') {
 				const randomQuote = require("./commands/data/quotes.js");
 				const embed = new Discord.RichEmbed()
-				.setTitle("**Random Quote**")
-				.setDescription('```js\n\"' + randomQuote.quote + '```')
-				.setColor(5301186)
-				.setTimestamp()
-				.setFooter(message.author.displayAvatarURL, message.author.tag)
+					.setTitle("**Random Quote**")
+					.setDescription("```js\n\"' + randomQuote.quote + '```")
+					.setColor(5301186)
+					.setTimestamp()
+					.setFooter(message.author.displayAvatarURL, message.author.tag)
 				message.channel.send(embed);
 			}
 			if (command === 'addrole') {
