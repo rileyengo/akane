@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (Discord, client, message, args) => {
 	const questions = require("./trivia/questions.js");
     message.reply('Trivia time! What is the capital of ' + questions.question + '? \n You have 15 seconds to answer.')
 		.then(() => {
