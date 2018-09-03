@@ -14,6 +14,7 @@ client.on('ready', () => {
 	function setAkaneGame() {
 		client.user.setPresence({ game: { name: 'Ranma 1/2', type: 1 } });
 	}
+	setAkaneGame();
 });
 client.on('message', message => {
 	const prefix = '!';
