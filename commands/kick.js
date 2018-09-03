@@ -1,14 +1,11 @@
 exports.run = (client, message, [mention, ...reason]) => {
 const modRole = message.guild.me.hasPermission("KICK_MEMBERS");
 	if (!modRole)
-	return console.log(You cannot kick users.")
+	return console.log("You cannot kick users.")
 	return message.reply("You cannot kick users.");
 
 	if (message.mentions.members.size === 0)
 	return message.reply("Please mention a user to kick");
-
-	if (!message.guild.me.hasPermission("KICK_MEMBERS"))
-	return message.reply("");
 	
 	const kickMember = message.mentions.members.first();
 
