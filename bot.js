@@ -11,7 +11,7 @@ client.on('ready', () => {
 		if (myInterval > 0) clearInterval(gamesInterval);  // stop
 		myInterval = setInterval("setAkaneGame()", iFrequency);  // run
 	}
-	function (setAkaneGame) {
+	function setAkaneGame() {
 		client.user.setPresence({ game: { name: 'Ranma 1/2', type: 1 } });
 	}
 });
