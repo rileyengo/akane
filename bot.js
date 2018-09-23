@@ -13,6 +13,7 @@ client.on('ready', () => {
 		const game = games[Math.floor(Math.random() * games.length)];
 		client.user.setPresence({ game: { name: games[game], type: 1 } }); 
 	}
+	setAGamesTimer();
 });
 client.on('message', message => {
 	const prefix = '!';
