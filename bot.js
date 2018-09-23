@@ -7,7 +7,7 @@ client.on('ready', () => {
 		h = new Date(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours() + 1, 0, 0, 0),
 		e = h - d;
 	    if (e > 120) {
-			window.setTimeout(doSomething, e);
+			window.setTimeout(setAGamesTimer, e);
 	    }
 		const games = new Array("Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",);
 		const game = games[Math.floor(Math.random() * games.length)];
