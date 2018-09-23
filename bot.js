@@ -4,15 +4,15 @@ require("./music.js");
 client.on('ready', () => {
 	const games = new Array("Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",);
 	const game = games[Math.floor(Math.random() * games.length)];
-	var iFrequency = 7200000; // supposed to change every two hours
-	var gamesInterval = 0;
+	const iFrequency = 7200000; // supposed to change every two hours
+	const gamesInterval = 0;
 	// STARTS and Resets the loop if any
 	function startLoop() {
 		if (myInterval > 0) clearInterval(gamesInterval);  // stop
 		myInterval = setInterval("setAkaneGame()", iFrequency);  // run
 	}
 	function setAkaneGame() {
-		client.user.setPresence({ game: { name: 'Ranma 1/2', type: 1 } });
+		client.user.setPresence({ game: { name: games[game], type: 1 } });
 	}
 	setAkaneGame();
 });
