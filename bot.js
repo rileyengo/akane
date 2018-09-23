@@ -14,7 +14,7 @@ client.on('ready', () => {
 	function setAkaneGame() {
 		client.user.setPresence({ game: { name: games[game], type: 1 } });
 	}
-	setAkaneGame();
+	startLoop();
 });
 client.on('message', message => {
 	const prefix = '!';
