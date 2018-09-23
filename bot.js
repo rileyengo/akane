@@ -2,17 +2,18 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 require("./music.js");
 client.on('ready', () => {
-	const games = new Array("Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",);
-	const game = games[Math.floor(Math.random() * games.length)];
-	const iFrequency = 7200000; // supposed to change every two hours
-	const gamesInterval = 0;
-	// STARTS and Resets the loop if any
 	function startLoop() {
+		const iFrequency = 7200000; // supposed to change every two hours
+		// STARTS and Resets the loop if any
+		const gamesInterval = 0;
+		const myInterval = 1;
 		if (myInterval > 0) clearInterval(gamesInterval);  // stop
 		myInterval = setInterval("setAkaneGame()", iFrequency);  // run
-	}
-	function setAkaneGame() {
-		client.user.setPresence({ game: { name: games[game], type: 1 } });
+		function setAkaneGame() {
+			const games = new Array("Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",);
+			const game = games[Math.floor(Math.random() * games.length)];
+			client.user.setPresence({ game: { name: games[game], type: 1 } });
+		}
 	}
 	startLoop();
 });
