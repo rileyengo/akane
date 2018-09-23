@@ -2,18 +2,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 require("./music.js");
 client.on('ready', () => {
-	function setAGamesTimer() {
-	    const d = new Date(),
-		h = new Date(d.getFullYear(), d.getMonth(), d.getDate(), d.getHours() + 1, 0, 0, 0),
-		e = h - d;
-	    if (e > 120) {
-			window.setTimeout(setAGamesTimer, e);
-	    }
-		const games = new Array("Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",);
-		const game = games[Math.floor(Math.random() * games.length)];
-		client.user.setPresence({ game: { name: games[game], type: 1 } }); 
-	}
-	setAGamesTimer();
+	// const games = new Array("Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",);
+	// const game = games[Math.floor(Math.random() * games.length)];
+	client.user.setPresence({ game: { name: /* games[game] */ 'Romeo and Juliet', type: 1 } }); 
 });
 client.on('message', message => {
 	const prefix = '!';
