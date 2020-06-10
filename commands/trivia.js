@@ -2,7 +2,7 @@ exports.run = (Discord, client, message, args) => {
 	const questions = require("./trivia/questions.js");
 	const question = questions.Questions[Math.floor(Math.random() * Math.floor(questions.Questions.length))];
 	const answer = questions.Answers[question]
-    message.reply('Trivia time! What is the capital of ' + question + '? \n You have 15 seconds to answer.')
+    message.channel.send('Trivia time! What is the capital of ' + question + '? \n You have 15 seconds to answer.')
 		.then(() => {
 		message.channel.awaitMessages(response => response.content === answer, {
 			max: 1,
