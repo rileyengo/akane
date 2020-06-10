@@ -15,11 +15,25 @@ exports.run = (Discord, client, message, args) => {
 			time: 15000,
 			errors: ['time'],
 		})
-			.then((collected) => {
-			message.channel.send('✅ Correct! The answer was ' + answer + '.');
+		.then((collected) => {
+			const embed = new Discord.RichEmbed()
+				.setTitle("✅ Correct!")
+				.setAuthor(message.author.username, message.author.displayAvatarURL)
+				.setColor(6734080)
+				.setTimestamp()
+				.setFooter(message.author.username, message.author.displayAvatarURL)
+				.setDescription('The answer was **' + answer + '**.')
+			message.channel.send({embed})
 		})
 		.catch(() => {
-			message.channel.send('❌ Wrong! The correct answer was ' + answer + '.');
+			const embed = new Discord.RichEmbed()
+				.setTitle("❌ Incorrect!")
+				.setAuthor(message.author.username, message.author.displayAvatarURL)
+				.setColor(13632027)
+				.setTimestamp()
+				.setFooter(message.author.username, message.author.displayAvatarURL)
+				.setDescription('The answer was **' + answer + '**.')
+			message.channel.send({embed})
 		});
 	}); 
 }
