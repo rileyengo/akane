@@ -2,12 +2,11 @@ exports.run = (Discord, client, message, args) => {
 	const questions = require("./trivia/questions.js");
 	const question = questions.Questions[Math.floor(Math.random() * Math.floor(questions.Questions.length))];
 	const answer = questions.Answers[question]
-	let member = message.mentions.members.first();
 	const embed = new Discord.RichEmbed()
-		.setTitle(member.user.tag)
-		.setAuthor(member.user.username, member.user.displayAvatarURL)
+		.setTitle(client.user.tag)
+		.setAuthor(client.user.username, client.user.displayAvatarURL)
 		.setColor(16272203)
-		.setFooter(member.user.username, member.user.displayAvatarURL)
+		.setFooter(client.user.username, client.user.displayAvatarURL)
 		.setTimestamp()
 		.setDescription('Trivia time! What is the capital of' + question + '? \n You have 15 seconds to answer.')
     message.channel.send({embed})
