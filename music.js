@@ -1,3 +1,4 @@
+// lmfao this doesn't work sorry m8
 const { Client, Util } = require('discord.js');
 const PREFIX = '!';
 const YouTube = require('simple-youtube-api');
