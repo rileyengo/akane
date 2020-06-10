@@ -3,11 +3,11 @@ exports.run = (Discord, client, message, args) => {
 	const question = questions.Questions[Math.floor(Math.random() * Math.floor(questions.Questions.length))];
 	const answer = questions.Answers[question]
 	const embed = new Discord.RichEmbed()
-		.setTitle("World Capitals")
+		.setTitle("🌐 World Capitals")
 		.setAuthor(message.author.username, message.author.displayAvatarURL)
 		.setColor(16272203)
 		.setTimestamp()
-		.setDescription('**What is the capital of' + question + '?** \n You have 15 seconds to answer.')
+		.setDescription('📍 **What is the capital of ' + question + '?** \n You have 15 seconds to answer, **case-sensitive**.')
     message.channel.send({embed})
 		.then(() => {
 		message.channel.awaitMessages(response => response.content === answer, {
