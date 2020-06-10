@@ -3,7 +3,7 @@ exports.run = (Discord, client, message, args) => {
 	const question = questions.Questions[Math.floor(Math.random() * Math.floor(questions.Questions.length))];
 	const answer = questions.Answers[question]
 	const embed = new Discord.RichEmbed()
-		.setTitle("🌐 World Capitals")
+		.setTitle("🗺 World Capitals")
 		.setAuthor(message.author.username, message.author.displayAvatarURL)
 		.setColor(16272203)
 		.setTimestamp()
