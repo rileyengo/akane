@@ -1,4 +1,3 @@
 exports.run = (Discord, client, message, args) => {
-    const m = message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`).catch(console.error);
+    message.channel.send("Ping?").then((sentMessage) => sentMessage.edit("Pong! `${Math.round(client.ping)}ms`"))
 }
