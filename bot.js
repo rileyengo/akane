@@ -2,9 +2,12 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 require("./music.js");
 client.on('ready', () => {
-	// const games = new Array("Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",);
+	const games = ["Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",];
 	// const game = games[Math.floor(Math.random() * games.length)];
-	client.user.setPresence({ game: { name: /* games[game] */ 'Romeo and Juliet', type: 1 } }); 
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (games.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
+        client.user.setActivity(games[index]); // sets bot's activities to one of the phrases in the arraylist.
+	}, 10000); // Runs this every 10 seconds.
 });
 client.on('message', message => {
 	const prefix = '!';
