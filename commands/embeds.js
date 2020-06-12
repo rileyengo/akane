@@ -23,7 +23,7 @@ exports.run = (Discord, command, client, message, args) => {
 			.addField("Users",
 				message.guild.memberCount)
 			.addField("Roles",
-				message.guild.roles.map(role => role.name).join(", "));
+				message.guild.roles.map(role => role.name).join(","));
 			message.channel.send({embed});
 	}
 	if (command === 'user') {
