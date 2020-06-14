@@ -19,16 +19,16 @@ exports.run = (Discord, client, message, [mention, reason]) => {
          * There are big differences between a user and a member
          */
         member
-          .kick('Optional reason that will display in the audit logs')
+          .kick('Automated kick requested by' + message.author.tag)
           .then(() => {
             // We let the message author know we were able to kick the person
-            message.reply(`Successfully kicked ${user.tag}`);
+            message.channel.send(":wave: Successfully kicked `" + user.tag + "`.");
           })
           .catch(err => {
             // An error happened
             // This is generally due to the bot not being able to kick the member,
             // either due to missing permissions or role hierarchy
-            message.reply('I was unable to kick the member');
+            message.channel.send('❌ I was unable to kick the member!');
             // Log the error
             console.error(err);
           });
@@ -38,7 +38,7 @@ exports.run = (Discord, client, message, [mention, reason]) => {
       }
       // Otherwise, if no user was mentioned
     } else {
-      message.reply("You didn't mention the user to kick!");
+      message.channel.send("❌ You didn't mention the user to kick!");
     }
   }
 };
