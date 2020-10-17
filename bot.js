@@ -22,7 +22,7 @@ client.on('message', message => {
 		"no u": "NO U",
 		"pls": "beg more",
 		"yes": "no",
-		"no": "yes",
+		"no": "yeah",
 	}; 
 	if (responseObject[message.content]) {
 		message.channel.send(responseObject[message.content]);
