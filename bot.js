@@ -9,7 +9,7 @@ const games = ["Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild li
 //	}, 10000); // Runs this every 10 seconds.
 // });
 client.on('ready', () => { 
-	client.user.setPresence('with P-chan'); // sets bot's activities to one of the phrases in the arraylist.
+	client.user.setPresence('with P-chan', {type: "Watching"}); // sets bot's activities to one of the phrases in the arraylist.
 //	client.user.setActivity(`with P-chan`);
 });
 client.on('message', message => {
