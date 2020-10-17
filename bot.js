@@ -19,7 +19,10 @@ client.on('message', message => {
 	const responseObject = {
 		"ayy": "LMAOO",
 		"lmao": "AYY",
-		"no u": "NO U"
+		"no u": "NO U",
+		"pls": "beg more",
+		"yes": "no",
+		"no": "yes",
 	}; 
 	if (responseObject[message.content]) {
 		message.channel.send(responseObject[message.content]);
