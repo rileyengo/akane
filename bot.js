@@ -24,8 +24,10 @@ client.on('message', message => {
 		"lmao": "AYY",
 		"no u": "NO U",
 		"pls": "beg more",
-		"yes": "no",
+		"yes": "nope",
 		"no": "yeah",
+		"i-": "Bitches be like I- Wow- I- Bitch what? Speak. Spit it the fuck out. What do you wanna say? I’m listening. We’re all waiting, and you’re doing nothing. This is nonsense, you can’t even use words anymore. Go the hell outside for once damn, goddamn, get a job or something. Idiot.",
+		"I-": "Bitches be like I- Wow- I- Bitch what? Speak. Spit it the fuck out. What do you wanna say? I’m listening. We’re all waiting, and you’re doing nothing. This is nonsense, you can’t even use words anymore. Go the hell outside for once damn, goddamn, get a job or something. Idiot.",
 	}; 
 	if (responseObject[message.content]) {
 		message.channel.send(responseObject[message.content]);
@@ -92,7 +94,7 @@ client.on('message', message => {
 				.setThumbnail(client.user.avatarURL)
 				.setDescription("A small multipurpose Discord bot maintained by [Americhino](https://github.com/Americhino). \n Named after [**Akane Tendo**](https://ranma.wikia.com/wiki/Akane_Tendo) from the 90s anime **Ranma 1/2**.")
 				.addField("Created on", "August 28, 2018", true)
-				.addField("Creator", "Americhino#4469", true)
+				.addField("Creator", "hyperionbalance#8580", true)
 				.addField("Library", "discord.js", true)
 				.setTimestamp()
 				message.channel.send({embed});
