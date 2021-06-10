@@ -25,15 +25,15 @@ client.on('message', message => {
 		"lmao": "AYY",
 		// no u
 		"no u": "NO U",
-		"No u": "no U"
-		"NO U": "no u lol"
+		"No u": "no U",
+		"NO U": "no u lol",
 		// pls
 		"pls": "beg more",
 		"plz": "beg more",
 		// yes
 		"yes": "nope",
 		"Yes": "Nope",
-		"yEs": "nOpE"
+		"yEs": "nOpE",
 		"yeS": "nOPe",
 		"yES": "nOPE",
 		"YES": "NOPE",
