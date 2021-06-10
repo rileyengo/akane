@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 require("./music.js");
-const games = ["Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",]; 
+// const games = ["Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",]; 
 // client.on('ready', () => { 
 //    setInterval(() => {
 //      const index = Math.floor(Math.random() * (games.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5). 
@@ -12,7 +12,7 @@ const game = games[Math.floor(Math.random() * games.length)];
 console.log(game); }, 100); */
 // });
 client.on('ready', () => { 
-	client.user.setPresence({name: 'with P-chan', type: "Watching"}); // sets bot's activities to one of the phrases in the arraylist.
+	client.user.setActivity('Ranma ½! ★', { type: "WATCHING"}); 
 //	client.user.setActivity(`with P-chan`);
 });
 client.on('message', message => {
@@ -20,12 +20,30 @@ client.on('message', message => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 	const responseObject = {
+		// misc.
 		"ayy": "LMAOO",
 		"lmao": "AYY",
+		// no u
 		"no u": "NO U",
+		"No u": "no U"
+		"NO U": "no u lol"
+		// pls
 		"pls": "beg more",
+		"plz": "beg more",
+		// yes
 		"yes": "nope",
+		"Yes": "Nope",
+		"yEs": "nOpE"
+		"yeS": "nOPe",
+		"yES": "nOPE",
+		"YES": "NOPE",
+		// no
 		"no": "yeah",
+		"no": "yeah",
+		"No": "Yeah",
+		"nO": "yEAh",
+		"NO": "YEAH",
+		// i-
 		"i-": "Bitches be like I- Wow- I- Bitch what? Speak. Spit it the fuck out. What do you wanna say? I’m listening. We’re all waiting, and you’re doing nothing. This is nonsense, you can’t even use words anymore. Go the hell outside for once damn, goddamn, get a job or something. Idiot.",
 		"I-": "Bitches be like I- Wow- I- Bitch what? Speak. Spit it the fuck out. What do you wanna say? I’m listening. We’re all waiting, and you’re doing nothing. This is nonsense, you can’t even use words anymore. Go the hell outside for once damn, goddamn, get a job or something. Idiot.",
 	}; 
