@@ -12,7 +12,7 @@ const game = games[Math.floor(Math.random() * games.length)];
 console.log(game); }, 100); */
 // });
 client.on('ready', () => { 
-	client.user.setPresence('Ranma ½! ★', { type: "WATCHING"}); 
+	client.user.setPresence({ game: { name: 'Ranma ½! ★' }, status: 'idle' }); 
 //	client.user.setActivity(`with P-chan`);
 });
 client.on('message', message => {
