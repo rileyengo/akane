@@ -79,21 +79,21 @@ exports.run = (Discord, command, client, message, args) => {
 			message.channel.send('Please mention a user! \n The syntax is `!addrole <user> <role>`.');
 		}
 	}
-	if (command == `rolelist`) {
+	if (command == 'rolelist') {
 		let selectedRole = message.guild.roles.find("name", args[1]);
        		const embed = new Discord.MessageEmbed()
 		.setTitle('Users with the ' + selectedRole + ' role:')
 		.setDescription(selectedRole.members.map(m=>m.user.tag).join('\n'));
 		message.channel.send(embed);    
     	}
-	if (command == `avatar`) {
+	if (command == 'avatar') {
 		let member = message.mentions.members.first();
+		const avatar = member.user.avatarURL
 		const embed = new Discord.MessageEmbed()
 			.setTitle(member.user.tag)
 			.setAuthor(member.user.username, member.user.displayAvatarURL)
 			.setColor(0x00AE86)
-			.setImage(member.user.avatarURL)
-			message.channel.send({embed});
+			message.channel.send({files: [file], embed: {embed}});
 	}
 	/* if (message.guild.id === '484501634416902144') {
 		var interval = setInterval (function () {
