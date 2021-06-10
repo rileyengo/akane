@@ -1,16 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-require("./music.js");
-// const games = ["Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",]; 
-// client.on('ready', () => { 
-//    setInterval(() => {
-//      const index = Math.floor(Math.random() * (games.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5). 
-//		client.user.setPresence({ activity: { name: 'with P-chan' /* games[index] */ }, status: 'idle' }); // sets bot's activities to one of the phrases in the arraylist.
-//	}, 10000); // Runs this every 10 seconds.
-/* setInterval(function(){ const games = ["Ranma 1/2", "At the dojo", "With P-chan", "Don't make me wild like you!", "我爱你! Wo ai ni!", "Romeo and Juliet",];
-const game = games[Math.floor(Math.random() * games.length)];
-console.log(game); }, 100); */
-// });
+require("./music.js"); // sorry the music doesn't work
 client.on('ready', () => { 
 	client.user.setPresence({ game: { name: 'Ranma ½! ★' }, status: 'idle' }); 
 //	client.user.setActivity(`with P-chan`);
@@ -56,7 +46,7 @@ client.on('message', message => {
 		if (command === 'info' || command === 'user' || command === 'server' || command === 'quote' || command === 'avatar' || command === 'rolelist' || command === 'addrole') {
 				if (command === 'server') {
 				let member = message.mentions.members.first();
-				const embed = new Discord.RichEmbed()
+				const embed = new Discord.MessageEmbed()
 					.setTitle(message.guild.name)
 					.setAuthor(message.guild.name, message.guild.iconURL)
 					.setColor(0x00AE86)
@@ -82,7 +72,7 @@ client.on('message', message => {
 			}
 			if (command === 'user') {
 				let member = message.mentions.members.first();
-				const embed = new Discord.RichEmbed()
+				const embed = new Discord.MessageEmbed()
 					.setTitle(member.user.tag)
 					.setAuthor(member.user.username, member.user.displayAvatarURL)
 					.setColor(0x00AE86)
@@ -105,7 +95,7 @@ client.on('message', message => {
 					message.channel.send({embed});
 			}
 			if (command === 'info') {
-				const embed = new Discord.RichEmbed()
+				const embed = new Discord.MessageEmbed()
 				.setTitle(client.user.username)
 				.setColor(0x00AE86)
 				.setFooter(message.author.tag, message.author.displayAvatarURL)
@@ -120,7 +110,7 @@ client.on('message', message => {
 			if (command === 'quote') {
 				const randomQuote = require("./commands/data/quotes.js");
 				const quote = randomQuote.quotes[Math.floor(Math.random() * randomQuote.quotes.length)];
-				const embed = new Discord.RichEmbed()
+				const embed = new Discord.MessageEmbed()
 					.setTitle('**Random Quote**')
 					.setDescription('```js\n' + quote + '```')
 					.setColor(5301186)
@@ -139,14 +129,14 @@ client.on('message', message => {
 			}
 			if (command == `rolelist`) {
 				let selectedRole = message.guild.roles.find("name", args[1]);
-				const embed = new Discord.RichEmbed()
+				const embed = new Discord.MessageEmbed()
 				.setTitle('Users with the ' + selectedRole + ' role:')
 				.setDescription(selectedRole.members.map(m=>m.user.tag).join('\n'));
 				message.channel.send({embed});    
 			}
 			if (command == `avatar`) {
 				let member = message.mentions.members.first();
-				const embed = new Discord.RichEmbed()
+				const embed = new Discord.MessageEmbed()
 					.setTitle(member.user.tag)
 					.setAuthor(member.user.username, member.user.displayAvatarURL)
 					.setColor(0x00AE86)
