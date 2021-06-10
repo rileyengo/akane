@@ -2,7 +2,7 @@ exports.run = (Discord, command, client, message, args) => {
 // Embeds need to be here for some reason 
 	if (command === 'server') {
 		let member = message.mentions.members.first();
-		const embed = new Discord.RichEmbed()
+		const embed = new Discord.MessageEmbed()
 			.setTitle(message.guild.name)
 			.setAuthor(message.guild.name, message.guild.iconURL)
 			.setColor(0x00AE86)
@@ -28,7 +28,7 @@ exports.run = (Discord, command, client, message, args) => {
 	}
 	if (command === 'user') {
 		let member = message.mentions.members.first();
-		const embed = new Discord.RichEmbed()
+		const embed = new Discord.MessageEmbed()
 			.setTitle(member.user.tag)
 			.setAuthor(member.user.username, member.user.displayAvatarURL)
 			.setColor(0x00AE86)
@@ -51,7 +51,7 @@ exports.run = (Discord, command, client, message, args) => {
 			message.channel.send({embed});
 	}
 	if (command === 'info') {
-		const embed = new Discord.RichEmbed()
+		const embed = new Discord.MessageEmbed()
 		.setTitle(client.user.username)
 		.setColor(0x00AE86)
 		.setFooter(message.author.tag, message.author.displayAvatarURL)
@@ -62,7 +62,7 @@ exports.run = (Discord, command, client, message, args) => {
 	}
 	if (command === 'quote') {
 		const randomQuote = require("./data/quotes.js");
-		const embed = new Discord.RichEmbed()
+		const embed = new Discord.MessageEmbed()
 	  	.setTitle("**Random Quote**")
   		.setDescription('```js\n\"' + randomQuote.quote + '```')
 	  	.setColor(5301186)
@@ -81,14 +81,14 @@ exports.run = (Discord, command, client, message, args) => {
 	}
 	if (command == `rolelist`) {
 		let selectedRole = message.guild.roles.find("name", args[1]);
-       		const embed = new Discord.RichEmbed()
+       		const embed = new Discord.MessageEmbed()
 		.setTitle('Users with the ' + selectedRole + ' role:')
 		.setDescription(selectedRole.members.map(m=>m.user.tag).join('\n'));
 		message.channel.send(embed);    
     	}
 	if (command == `avatar`) {
 		let member = message.mentions.members.first();
-		const embed = new Discord.RichEmbed()
+		const embed = new Discord.MessageEmbed()
 			.setTitle(member.user.tag)
 			.setAuthor(member.user.username, member.user.displayAvatarURL)
 			.setColor(0x00AE86)
