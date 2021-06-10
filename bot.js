@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 require("./music.js"); // sorry the music doesn't work
 client.on('ready', () => { 
-	client.user.setPresence({ game: { name: 'Ranma ½! ★' }, status: 'idle' }); 
+	client.user.setActivity('Ranma ½! ★', { type: 'WATCHING' }); 
 //	client.user.setActivity(`with P-chan`);
 });
 client.on('message', message => {
