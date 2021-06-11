@@ -1,12 +1,9 @@
 exports.run = (Discord, command, client, message, args) => {
-		const member = message.mentions.users.first();
-		const avatar = message.author.displayAvatarURL()
+		let member = message.mentions.members.first();
+		const avatar = member.user.displayAvatarURL() || message.author.displayAvatarURL() ;
 		const embed = new Discord.MessageEmbed()
 			.setTitle(member.user.tag)
-			.setAuthor(member.user.username, member.user.displayAvatarURL())
+			.setAuthor(member.user.username, message.author.displayAvatarURL())
 			.setColor(0x00AE86)
-		if (!message.mentions.users.size) {
-			return message.reply('mention a user pls');
-		}
-			message.channel.send({files: [avatar], embed: {embed}});
+		message.channel.send({files: [avatar], embed: {embed}});
 }
