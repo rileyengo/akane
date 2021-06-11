@@ -1,7 +1,7 @@
 exports.run = (Discord, client, message, args) => {
 		let member = message.mentions.members.first() || message.author;
 		const embed = new Discord.MessageEmbed()
-			.setTitle(member.user.tag)
+			// .setTitle(member.user.tag)
 			.setAuthor(member.user.username, member.user.displayAvatarURL())
 			.setColor(0x00AE86)
 			.setFooter(message.author.tag, message.author.displayAvatarURL())
