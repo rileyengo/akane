@@ -30,11 +30,11 @@ exports.run = (Discord, command, client, message, args) => {
 		let member = message.mentions.members.first();
 		const embed = new Discord.MessageEmbed()
 			.setTitle(member.user.tag)
-			.setAuthor(member.user.username, member.user.displayAvatarURL)
+			.setAuthor(member.user.username, member.user.displayAvatarURL())
 			.setColor(0x00AE86)
-			.setFooter(message.author.tag, message.author.displayAvatarURL)
+			.setFooter(message.author.tag, message.author.displayAvatarURL())
 			// .setImage("http://i.imgur.com/yVpymuV.png")
-			.setThumbnail(member.user.avatarURL)
+			.setThumbnail(member.user.avatarURL())
 			.setTimestamp()
 			.addField("Nickname",
 				member.displayName)
