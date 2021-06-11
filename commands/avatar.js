@@ -1,6 +1,6 @@
-exports.run = (Discord, command, client, message, args) => {
-		let member = message.mentions.members.first();
-		const avatar = member.user.displayAvatarURL() || message.author.displayAvatarURL() ;
+exports.run = (Discord, client, message, args) => {
+		let member = message.mentions.users.first() || message.author;
+		const avatar = member.user.displayAvatarURL() ;
 		const embed = new Discord.MessageEmbed()
 			.setTitle(member.user.tag)
 			.setAuthor(member.user.username, message.author.displayAvatarURL())
