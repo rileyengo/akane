@@ -4,7 +4,7 @@ exports.run = (Discord, client, message, args) => {
 	const answer = questions.Answers[question]
 	const embed = new Discord.MessageEmbed()
 		.setTitle("🗺 World Capitals")
-		.setAuthor(message.author.username, message.author.displayAvatarURL)
+		.setAuthor(message.author.username, message.author.displayAvatarURL())
 		.setColor(16272203)
 		.setTimestamp()
 		.setDescription('📍 **What is the capital of ' + question + '?** \n You have 15 seconds to answer, **case-sensitive**.')
@@ -18,20 +18,20 @@ exports.run = (Discord, client, message, args) => {
 		.then((collected) => {
 			const embed = new Discord.MessageEmbed()
 				.setTitle("✅ Correct!")
-				.setAuthor(message.author.username, message.author.displayAvatarURL)
+				.setAuthor(message.author.username, message.author.displayAvatarURL())
 				.setColor(6734080)
 				.setTimestamp()
-				.setFooter(message.author.username, message.author.displayAvatarURL)
+				.setFooter(message.author.username, message.author.displayAvatarURL())
 				.setDescription('The answer was **' + answer + '**.')
 			message.channel.send({embed})
 		})
 		.catch(() => {
 			const embed = new Discord.MessageEmbed()
 				.setTitle("❌ Incorrect!")
-				.setAuthor(message.author.username, message.author.displayAvatarURL)
+				.setAuthor(message.author.username, message.author.displayAvatarURL())
 				.setColor(13632027)
 				.setTimestamp()
-				.setFooter(message.author.username, message.author.displayAvatarURL)
+				.setFooter(message.author.username, message.author.displayAvatarURL())
 				.setDescription('The answer was **' + answer + '**.')
 			message.channel.send({embed})
 		});
