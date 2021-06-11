@@ -54,8 +54,8 @@ exports.run = (Discord, command, client, message, args) => {
 		const embed = new Discord.MessageEmbed()
 		.setTitle(client.user.username)
 		.setColor(0x00AE86)
-		.setFooter(message.author.tag, message.author.displayAvatarURL)
-		.setThumbnail(client.user.avatarURL)
+		.setFooter(message.author.tag, message.author.displayAvatarURL())
+		.setThumbnail(client.user.avatarURL())
 		.setDescription("A small multipurpose Discord bot maintained by [Americhino](https://github.com/Americhino). \n Named after [**Akane Tendo**](https://ranma.wikia.com/wiki/Akane_Tendo) from the 90s anime **Ranma 1/2**.")
 		.setTimestamp()
 		message.channel.send({embed});
@@ -67,7 +67,7 @@ exports.run = (Discord, command, client, message, args) => {
   		.setDescription('```js\n\"' + randomQuote.quote + '```')
 	  	.setColor(5301186)
   		.setTimestamp()
-	  	.setFooter(message.author.displayAvatarURL, message.author.tag)
+	  	.setFooter(message.author.displayAvatarURL(), message.author.tag)
 		message.channel.send(embed);
 	}
 	if (command === 'addrole') {
@@ -88,10 +88,10 @@ exports.run = (Discord, command, client, message, args) => {
     	}
 	if (command == 'avatar') {
 		let member = message.mentions.members.first();
-		const avatar = member.user.avatarURL
+		const avatar = message.author.displayAvatarURL()
 		const embed = new Discord.MessageEmbed()
 			.setTitle(member.user.tag)
-			.setAuthor(member.user.username, member.user.displayAvatarURL)
+			.setAuthor(member.user.username, message.author.displayAvatarURL())
 			.setColor(0x00AE86)
 			message.channel.send({files: [file], embed: {embed}});
 	}
